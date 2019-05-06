@@ -1,4 +1,4 @@
-#Mon May 06 15:30:54 WEST 2019
+#Mon May 06 15:51:45 WEST 2019
 base.0=/home/monteiro/Documents/WheelTarget/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

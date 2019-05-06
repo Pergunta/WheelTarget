@@ -25,7 +25,7 @@ class ProfileTwoPage extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 40.0,
                       backgroundImage: NetworkImage(
-                          "https://avatars0.githubusercontent.com/u/12619420?s=460&v=4"),
+                          "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2779.png"),
                     ),
                   ),
                   Text(
@@ -64,7 +64,7 @@ class ProfileTwoPage extends StatelessWidget {
                     itemBuilder: (context, i) => Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Image.network(
-                              "https://cdn.pixabay.com/photo/2016/10/31/18/14/ice-1786311_960_720.jpg"),
+                              "https://images-na.ssl-images-amazon.com/images/I/81bNkM6hDnL._SX466_.jpg"),
                         ),
                   ),
                 ),
@@ -81,7 +81,7 @@ class ProfileTwoPage extends StatelessWidget {
           children: <Widget>[
             CircleAvatar(
               backgroundImage: NetworkImage(
-                  "https://avatars0.githubusercontent.com/u/12619420?s=460&v=4"),
+                  "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2779.png"),
             ),
             Expanded(
                 child: Padding(
