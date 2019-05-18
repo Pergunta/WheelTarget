@@ -126,7 +126,7 @@ class ProfileTwoPage extends StatelessWidget {
                 child: Card(
                   elevation: 2.0,
                   child: Image.network(
-                    "https://cdn.pixabay.com/photo/2018/06/12/01/04/road-3469810_960_720.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2016_BMW_i8.jpg/1200px-2016_BMW_i8.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),

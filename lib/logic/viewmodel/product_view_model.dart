@@ -9,12 +9,13 @@ class ProductViewModel {
 
   getProducts() => <Product>[
         Product(
-            brand: "Levis",
-            description: "Print T-shirt",
+            brand: "Fiat",
+            description: "Diesel Ano:02/2010 40 252 km 1 300 cm 95 cv ",
+  
             image:
-                "https://mosaic02.ztat.net/vgs/media/pdp-zoom/LE/22/1D/02/2A/12/LE221D022-A12@16.1.jpg",
-            name: "THE PERFECT",
-            price: "£19.99",
+                "https://auto8.imgs.sapo.pt/0448/00000448/v/0340/002074340/1370x1053/Fiat-500-94175881.jpg",
+            name: "500",
+            price: "20.099,30€",
             rating: 4.0,
             colors: [
               ProductColor(
@@ -39,11 +40,11 @@ class ProductViewModel {
             totalReviews: 170),
         Product(
             brand: "BMW",
-            description: "Pool sliders",
+            description: "I8 series",
             image:
-                "https://mosaic02.ztat.net/vgs/media/catalog-lg/AD/58/1D/00/9Q/12/AD581D009-Q12@13.jpg",
-            name: "AQUALETTE",
-            price: "£13.49",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2016_BMW_i8.jpg/1200px-2016_BMW_i8.jpg",
+            name: "I8",
+            price: "103.409,0 €",
             rating: 5.0,
             totalReviews: 10),
         Product(

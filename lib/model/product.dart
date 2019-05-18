@@ -21,6 +21,7 @@ class Product {
       this.price,
       this.rating,
       this.description,
+      
       this.totalReviews,
       this.sizes,
       this.colors,

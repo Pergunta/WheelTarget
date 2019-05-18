@@ -14,7 +14,7 @@ class MenuViewModel {
           menuColor: Color(0xff050505),
           icon: Icons.person,
           image: UIData.profileImage,
-          items: ["View Profile", "Profile 2", "Profile 3", "Profile 4"]),
+          items: ["My Profile"]),
       Menu(
           title: "Shopping",
           menuColor: Color(0xffc8c4bd),
