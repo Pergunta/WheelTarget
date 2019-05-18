@@ -35,6 +35,7 @@ class ShoppingDetailsPage extends StatelessWidget {
     return ProductProvider(
       productBloc: productBloc,
       child: CommonScaffold(
+        context: context,
         backGroundColor: Colors.grey.shade100,
         actionFirstIcon: null,
         appTitle: "Product Detail",

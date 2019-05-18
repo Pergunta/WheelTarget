@@ -17,15 +17,9 @@ class ProductViewModel {
             engine: "1 300 cm3 95 cv",
             gearbox: "Manual",
             image:
-<<<<<<< HEAD
-                "https://auto8.imgs.sapo.pt/0448/00000448/v/0340/002074340/1370x1053/Fiat-500-94175881.jpg",
-            name: "Fiat 500",
-            price: "20.099€",
-=======
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2017_Fiat_500_facelift.jpg/1920px-2017_Fiat_500_facelift.jpg",
             name: "500",
             price: "£20,000",
->>>>>>> eac02220f03484404e92c7f9824dcb8cf8335658
             rating: 4.0,
             colors: [
               ProductColor(
@@ -52,15 +46,9 @@ class ProductViewModel {
             brand: "BMW",
             description: "I8 series",
             image:
-<<<<<<< HEAD
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2016_BMW_i8.jpg/1200px-2016_BMW_i8.jpg",
-            name: "BMW-I8",
-            price: "103.409€",
-=======
                 "https://images.autouncle.com/pt/car_images/medium_5b2da5b6-19aa-4d0c-ac93-6fa1c37380cc_bmw-i8-edrive-365cv.jpg",
             name: "I8",
             price: "£103,000",
->>>>>>> eac02220f03484404e92c7f9824dcb8cf8335658
             rating: 5.0,
             totalReviews: 10),
         Product(

@@ -15,9 +15,11 @@ class CommonScaffold extends StatelessWidget {
   final floatingIcon;
   final centerDocked;
   final elevation;
+  final context;
 
   CommonScaffold(
-      {this.appTitle,
+      {this.context,
+      this.appTitle,
       this.bodyData,
       this.showFAB = false,
       this.showDrawer = false,
@@ -42,6 +44,7 @@ class CommonScaffold extends StatelessWidget {
             children: <Widget>[
               SizedBox(
                 height: double.infinity,
+                width: 180,
                 child: new InkWell(
                   radius: 10.0,
                   splashColor: Colors.yellow,
@@ -57,18 +60,19 @@ class CommonScaffold extends StatelessWidget {
                   ),
                 ),
               ),
-              new SizedBox(
-                width: 20.0,
-              ),
               SizedBox(
                 height: double.infinity,
+                width: 180,
                 child: new InkWell(
-                  onTap: () {},
+                  onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(
+              context, "/Payment Success");},
                   radius: 10.0,
                   splashColor: Colors.yellow,
                   child: Center(
                     child: new Text(
-                      "ORDER PAGE",
+                      "BUY NOW",
                       style: new TextStyle(
                           fontSize: 12.0,
                           fontWeight: FontWeight.bold,
@@ -107,21 +111,7 @@ class CommonScaffold extends StatelessWidget {
       ),
       drawer: showDrawer ? CommonDrawer() : null,
       body: bodyData,
-      floatingActionButton: showFAB
-          ? CustomFloat(
-              builder: centerDocked
-                  ? Text(
-                      "5",
-                      style: TextStyle(color: Colors.white, fontSize: 10.0),
-                    )
-                  : null,
-              icon: floatingIcon,
-              qrCallback: () {},
-            )
-          : null,
-      floatingActionButtonLocation: centerDocked
-          ? FloatingActionButtonLocation.centerDocked
-          : FloatingActionButtonLocation.endFloat,
+      
       bottomNavigationBar: showBottomNav ? myBottomBar() : null,
     );
   }

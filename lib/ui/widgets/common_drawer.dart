@@ -20,6 +20,19 @@ class CommonDrawer extends StatelessWidget {
               backgroundImage: new AssetImage(UIData.pkImage),
             ),
           ),
+            new ListTile(
+            title: Text(
+              "Home",
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
+            ),
+            leading: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            onTap: (){
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+},
+          ),
           new ListTile(
             title: Text(
               "Profile",
@@ -50,25 +63,11 @@ class CommonDrawer extends StatelessWidget {
           ),
           new ListTile(
             title: Text(
-              "Dashboard",
+              "News Feed",
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
             ),
             leading: Icon(
-              Icons.dashboard,
-              color: Colors.red,
-            ),
-            onTap: (){
-              Navigator.pop(context);
-              Navigator.pushNamed(
-              context, "/Dashboard 1");},
-          ),
-          new ListTile(
-            title: Text(
-              "Timeline",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
-            ),
-            leading: Icon(
-              Icons.timeline,
+              Icons.list,
               color: Colors.cyan,
             ),
             onTap: (){

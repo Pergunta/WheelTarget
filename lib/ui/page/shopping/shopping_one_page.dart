@@ -83,7 +83,8 @@ class ShoppingOnePage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.yellow,
-                    onDoubleTap: () => showSnackBar(),
+                    onTap: (){               
+                    Navigator.pushNamed(_context, "/Shopping Details");},
                     child: Material(
                       clipBehavior: Clip.antiAlias,
                       elevation: 2.0,

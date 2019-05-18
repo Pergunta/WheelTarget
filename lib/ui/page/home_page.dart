@@ -13,7 +13,8 @@ class HomePage extends StatelessWidget {
   BuildContext _context;
   //menuStack
   Widget menuStack(BuildContext context, Menu menu) => InkWell(
-        onTap: () => _showModalBottomSheet(context, menu),
+        onTap: (){ Navigator.pushNamed(
+                  context, "/${menu.items[0]}");},
         splashColor: Colors.orange,
         child: Card(
           clipBehavior: Clip.antiAlias,

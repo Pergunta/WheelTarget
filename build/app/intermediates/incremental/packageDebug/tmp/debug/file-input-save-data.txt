@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat May 18 17:53:24 WEST 2019
+#Sat May 18 22:53:57 WEST 2019
 17.baseType=DIRECTORY
 4.path=flutter_assets/assets/images/logo1.png
 25.base=/home/gjmarques/Documents/WheelTarget/build/app/intermediates/assets/debug
