@@ -1,4 +1,0 @@
-#Sat May 18 22:53:56 WEST 2019
-base.0=/home/gjmarques/Documents/WheelTarget/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
