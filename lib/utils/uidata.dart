@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
+  
 class UIData {
   //routes
   static const String homeRoute = "/home";

@@ -10,12 +10,16 @@ class ProductViewModel {
   getProducts() => <Product>[
         Product(
             brand: "Fiat",
-            description: "Diesel Ano:02/2010 40 252 km 1 300 cm 95 cv ",
-  
+            description: "Diesel, Manual, 1300cm3 90cv , 02/2010 40,252km",
+            date:"02/2010" ,
+            fuel: "Diesel",
+            km:"40 252km",
+            engine: "1 300 cm3 95 cv",
+            gearbox: "Manual",
             image:
-                "https://auto8.imgs.sapo.pt/0448/00000448/v/0340/002074340/1370x1053/Fiat-500-94175881.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2017_Fiat_500_facelift.jpg/1920px-2017_Fiat_500_facelift.jpg",
             name: "500",
-            price: "20.099,30€",
+            price: "£20,000",
             rating: 4.0,
             colors: [
               ProductColor(
@@ -35,88 +39,88 @@ class ProductViewModel {
                 colorName: "Cyan",
               )
             ],
-            quantity: 0,
+            
             sizes: ["S", "M", "L", "XL"],
             totalReviews: 170),
         Product(
             brand: "BMW",
             description: "I8 series",
             image:
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2016_BMW_i8.jpg/1200px-2016_BMW_i8.jpg",
+                "https://images.autouncle.com/pt/car_images/medium_5b2da5b6-19aa-4d0c-ac93-6fa1c37380cc_bmw-i8-edrive-365cv.jpg",
             name: "I8",
-            price: "103.409,0 €",
+            price: "£103,000",
             rating: 5.0,
             totalReviews: 10),
         Product(
-            brand: "Produkt",
-            description: "Men's Shirt",
+            brand: "Ferrari",
+            description: "LaFerrari",
             image:
-                "https://mosaic01.ztat.net/vgs/media/pdp-zoom/PY/52/2D/01/FG/11/PY522D01F-G11@8.jpg",
-            name: "ROBI CHECK",
-            price: "£16.49",
-            rating: 4.5,
+                "https://cdn.jamesedition.com/media/W1siZiIsImxpc3RpbmdfaW1hZ2VzLzIwMTgvMDgvMTUvMDgvMTAvMDQvMzQxYzU1NGEtZGZjYS00YmJkLTgyYjAtMGY5YjEwZDk0OTVlL0xhRiAxLmpwZWciXSxbInAiLCJ0aHVtYiIsIjEwNDB4NjIwIyJdLFsicCIsImVuY29kZSIsImpwZyIsbnVsbF1d/2015-ferrari-laferrari-delivery-mileage.jpg?sha=2d7dbb7f5f000b64",
+            name: "LaFerrari",
+            price: "-",
+            rating: 3.0,
             totalReviews: 0),
         Product(
-            brand: "adidas Originals",
-            description: "Hoodie",
+            brand: "Porshe",
+            description: "Carrera GT",
             image:
-                "https://mosaic01.ztat.net/vgs/media/pdp-zoom/AD/12/2S/07/QN/11/AD122S07Q-N11@8.jpg",
-            name: "TREF OVER HOOD",
-            price: "£34.99",
+                "https://assets.hemmings.com/uimage/63184506-770-0@2X.jpg?rev=1",
+            name: "Carrera GT",
+            price: "£959,000",
             rating: 4.0,
             totalReviews: 5),
         Product(
-            brand: "ION",
-            description: "Hydration rucksack",
-            image:
-                "https://mosaic01.ztat.net/vgs/media/packshot/pdp-zoom/N1/94/4E/00/4G/11/N1944E004-G11@10.jpg",
-            name: "BACKPACK VILLAIN 4",
-            price: "£55.99",
-            rating: 4.8,
-            totalReviews: 12),
-        Product(
-            brand: "Diesel",
-            description: "Straight leg jeans",
-            image:
-                "https://mosaic01.ztat.net/vgs/media/pdp-gallery/DI/12/2G/0H/5K/11/DI122G0H5-K11@10.jpg",
-            name: "THYTAN",
-            price: "£83.99",
-            rating: 4.2,
-            totalReviews: 28),
-        Product(
-            brand: "YOURTURN",
-            description: "Watch in budget",
-            image:
-                "https://mosaic02.ztat.net/vgs/media/packshot/pdp-zoom/YO/15/2M/00/6Q/11/YO152M006-Q11@6.jpg",
-            name: "Watch",
-            price: "£11.99",
-            rating: 4.7,
-            totalReviews: 120),
-        Product(
-            brand: "Vero Moda",
-            description: "Day dress - black/off",
-            image:
-                "https://mosaic01.ztat.net/vgs/media/pdp-zoom/VE/12/1C/1B/RQ/11/VE121C1BR-Q11@15.jpg",
-            name: "VMKANA",
-            price: "£26.59",
+              brand: "Mercedez",
+              description: "AMG -GT",
+              image:
+                  "https://cdn1.evo.co.uk/sites/evo/files/styles/gallery_adv/public/2018/02/edo-8.jpg?itok=KPk3R-Kz",
+              name: "AMG",
+              price: "£200,399",
+              rating: 4.8,
+              totalReviews: 12),
+          Product(
+              brand: "Fendt",
+              description: "Farmer20000",
+              image:
+                  "https://canalrural.uol.com.br/wp-content/uploads/2019/05/Trator-Fendt-05-640x426.png",
+              name: "farmer",
+              price: "£280,099",
+              rating: 4.2,
+              totalReviews: 28),
+          Product(
+              brand: "Lotus",
+              description: "Evora",
+              image:
+                  "https://media.bizj.us/view/img/10913820/lotus-evora-jld8865*1200xx3635-2045-0-136.jpg",
+              name: "Evora",
+              price: "£70.099",
+              rating: 4.7,
+              totalReviews: 120),
+          Product(
+              brand: "Fiat",
+              description: "X1/9",
+              image:
+                  "https://cdn.bringatrailer.com/wp-content/uploads/2017/06/IMG_1506-e1502217129406-940x725.jpg",
+            name: "Fiat",
+            price: "£26,059",
             rating: 4.0,
             totalReviews: 33),
         Product(
-            brand: "ONLY",
-            description: "A-line skirt",
+            brand: "Aston Martin",
+            description: "DB11",
             image:
-                "https://mosaic01.ztat.net/vgs/media/pdp-zoom/ON/32/1B/0B/JG/11/ON321B0BJ-G11@8.jpg",
-            name: "ONLTHAI FRILL",
-            price: "£25.59",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMNuvrDWnzx5UQoZqyo1hXqunZyk8HhmQ8erf2e3U9xDE8QG2E",
+            name: "DB11",
+            price: "£125,059",
             rating: 4.4,
             totalReviews: 44),
         Product(
-            brand: "MAI PIÙ SENZA",
-            description: "Awesome Heels",
+            brand: "BMW",
+            description: "2002 turbo",
             image:
-                "https://mosaic01.ztat.net/vgs/media/pdp-zoom/M6/61/1B/02/9A/11/M6611B029-A11@13.jpg",
-            name: "HIGH HEELS",
-            price: "£59.99",
+                "https://bonsrapazes.com/wp-content/uploads/2018/10/https_2F2Fhypebeast.com2Fimage2F20182F102Fbmw-2002-turbo-original-1975-chamonix-white-auction-2.jpg",
+            name: "BMW",
+            price: "£159,909",
             rating: 4.1,
             totalReviews: 22),
       ];

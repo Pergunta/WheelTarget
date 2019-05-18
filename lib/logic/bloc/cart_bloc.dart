@@ -14,19 +14,10 @@ class CartBloc {
 
   CartBloc(Product p) {
     _cartViewModel = CartViewModel(product: p);
-    additionalController.stream.listen(onAdd);
-    subtractionController.stream.listen(onDelete);
+
   }
 
-  void onAdd(bool done) {
-    _cartViewModel.addQuantity();
-    countController.add(_cartViewModel.totalQuantity);
-  }
-
-  void onDelete(bool done) {
-    _cartViewModel.deleteQuantity();
-    countController.add(_cartViewModel.totalQuantity);
-  }
+  
 
   void dispose() {
     additionalController?.close();

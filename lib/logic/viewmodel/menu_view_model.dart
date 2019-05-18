@@ -24,7 +24,6 @@ class MenuViewModel {
             "Shopping List",
             "Shopping Details",
             "Product Details",
-            "Shopping 4"
           ]),
       Menu(
           title: "Login",
