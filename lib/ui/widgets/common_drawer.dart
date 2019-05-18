@@ -29,6 +29,10 @@ class CommonDrawer extends StatelessWidget {
               Icons.person,
               color: Colors.blue,
             ),
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.pushNamed(
+              context, "/My Profile");},
           ),
           new ListTile(
             title: Text(
@@ -39,6 +43,10 @@ class CommonDrawer extends StatelessWidget {
               Icons.shopping_cart,
               color: Colors.green,
             ),
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.pushNamed(
+              context, "/Shopping List");},
           ),
           new ListTile(
             title: Text(
@@ -49,6 +57,10 @@ class CommonDrawer extends StatelessWidget {
               Icons.dashboard,
               color: Colors.red,
             ),
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.pushNamed(
+              context, "/Dashboard 1");},
           ),
           new ListTile(
             title: Text(
@@ -59,7 +71,11 @@ class CommonDrawer extends StatelessWidget {
               Icons.timeline,
               color: Colors.cyan,
             ),
-          ),
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.pushNamed(
+              context, "/Feed");},
+              ),
           Divider(),
           new ListTile(
             title: Text(
@@ -70,6 +86,10 @@ class CommonDrawer extends StatelessWidget {
               Icons.settings,
               color: Colors.brown,
             ),
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.pushNamed(
+              context, "/Device Settings");},
           ),
           Divider(),
           MyAboutTile()

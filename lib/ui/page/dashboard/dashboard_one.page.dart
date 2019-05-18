@@ -29,7 +29,7 @@ class DashboardOnePage extends StatelessWidget {
                   ),
                   new ProfileTile(
                     title: "Hi,Chris Paul ",
-                    subtitle: "Welcome to Whell Target",
+                    subtitle: "Welcome to Wheel Target",
                     textColor: Colors.white,
                   ),
                   new IconButton(

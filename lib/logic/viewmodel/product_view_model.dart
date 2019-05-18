@@ -14,8 +14,8 @@ class ProductViewModel {
   
             image:
                 "https://auto8.imgs.sapo.pt/0448/00000448/v/0340/002074340/1370x1053/Fiat-500-94175881.jpg",
-            name: "500",
-            price: "20.099,30€",
+            name: "Fiat 500",
+            price: "20.099€",
             rating: 4.0,
             colors: [
               ProductColor(
@@ -43,8 +43,8 @@ class ProductViewModel {
             description: "I8 series",
             image:
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2016_BMW_i8.jpg/1200px-2016_BMW_i8.jpg",
-            name: "I8",
-            price: "103.409,0 €",
+            name: "BMW-I8",
+            price: "103.409€",
             rating: 5.0,
             totalReviews: 10),
         Product(

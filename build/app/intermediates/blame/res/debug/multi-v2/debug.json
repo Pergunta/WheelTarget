@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/monteiro/Documents/WheelTarget/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "/home/gjmarques/Documents/WheelTarget/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/home/monteiro/Documents/WheelTarget/android/app/src/main/res/values/ic_launcher_background.xml",
+                    "source": "/home/gjmarques/Documents/WheelTarget/android/app/src/main/res/values/ic_launcher_background.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/monteiro/Documents/WheelTarget/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/gjmarques/Documents/WheelTarget/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

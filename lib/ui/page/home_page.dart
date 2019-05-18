@@ -174,7 +174,7 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                header(),
+                //header(),
                 Expanded(
                   child: ListView.builder(
                     shrinkWrap: false,
