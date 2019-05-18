@@ -7,10 +7,15 @@ class Product {
   String price;
   String brand;
   String description;
+  String date;
+  String fuel;
+  String km;
+  String engine;
+  String gearbox;
   int totalReviews;
   List<String> sizes;
   List<ProductColor> colors;
-  int quantity = 0;
+
 
   
 
@@ -21,11 +26,15 @@ class Product {
       this.price,
       this.rating,
       this.description,
-      
+      this.date,
+      this.fuel,
+      this.km,
+      this.engine,
+      this.gearbox,
       this.totalReviews,
       this.sizes,
       this.colors,
-      this.quantity});
+     });
 
   
 }

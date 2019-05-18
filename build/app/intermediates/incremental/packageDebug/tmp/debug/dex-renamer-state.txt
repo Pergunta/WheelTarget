@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Sat May 18 17:53:23 WEST 2019
 base.0=/home/gjmarques/Documents/WheelTarget/build/app/intermediates/transforms/dexMerger/debug/0
+=======
+#Sat May 18 17:25:42 WEST 2019
+base.0=/home/monteiro/Documents/WheelTarget/build/app/intermediates/transforms/dexMerger/debug/0
+>>>>>>> eac02220f03484404e92c7f9824dcb8cf8335658
 path.0=classes.dex
 renamed.0=classes.dex

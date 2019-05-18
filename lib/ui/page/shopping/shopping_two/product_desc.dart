@@ -28,7 +28,8 @@ class ProductDesc extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.normal),
               ),
-              trailing: new Text(product.price,
+              trailing: 
+                  new Text(product.price+"euros",
                   style: new TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
@@ -40,10 +41,17 @@ class ProductDesc extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 28.0),
-            child: new Text(
-              product.description,
-              style: TextStyle(color: Colors.white),
-              textAlign: TextAlign.start,
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+            
+                Text(product.fuel, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
+                Text(product.date, style :new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
+                Text(product.km, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
+                Text(product.engine, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
+                Text(product.gearbox, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
+              ],
             ),
           ),
           new SizedBox(
@@ -64,12 +72,12 @@ class ProductDesc extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       new Text(
-                        "Your Size",
+                        "Doors",
                         style: TextStyle(fontWeight: FontWeight.w700),
                       ),
                       new RawChip(
                           label: new Text(
-                            "M",
+                            "3",
                             style: TextStyle(color: Colors.white),
                           ),
                           backgroundColor: Colors.cyan)

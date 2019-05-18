@@ -48,53 +48,7 @@ class ProductDetailWidgets extends StatelessWidget {
           ProductCard(product: product)
         ],
       );
-  Widget quantityCard(Size deviceSize, CartBloc cartBloc) => new Positioned(
-        top: (deviceSize.height - deviceSize.height * 0.1),
-        left: deviceSize.width / 2 - deviceSize.width / 5,
-        width: deviceSize.width / 2 - 30,
-        child: new Material(
-          clipBehavior: Clip.antiAlias,
-          shape: new StadiumBorder(),
-          shadowColor: Colors.black,
-          elevation: 2.0,
-          color: Colors.transparent,
-          child: Ink(
-            decoration: new BoxDecoration(
-              gradient: new LinearGradient(colors: UIData.kitGradients),
-            ),
-            child: new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                new IconButton(
-                  icon: new Icon(
-                    Icons.remove,
-                    color: Colors.white,
-                  ),
-                  onPressed: () => cartBloc.subtractionController.add(true),
-                ),
-                StreamBuilder<int>(
-                  stream: cartBloc.getCount,
-                  initialData: 0,
-                  builder: (context, snapshot) => new Text(
-                        snapshot.data.toString(),
-                        style: new TextStyle(
-                            color: Colors.white,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold),
-                      ),
-                ),
-                new IconButton(
-                  icon: new Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                  onPressed: () => cartBloc.additionalController.add(true),
-                )
-              ],
-            ),
-          ),
-        ),
-      );
+ 
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
@@ -103,7 +57,7 @@ class ProductDetailWidgets extends StatelessWidget {
       fit: StackFit.expand,
       children: <Widget>[
         appBarColumn(context),
-        quantityCard(deviceSize, cartBloc),
+        
       ],
     );
   }
