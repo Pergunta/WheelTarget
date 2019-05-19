@@ -92,12 +92,31 @@ class LoginTwoPage extends StatelessWidget {
             ),
             SizedBox(
               height: 5.0,
-            ),
-            Text(
-              "SIGN UP FOR AN ACCOUNT",
+            ),Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              width: double.infinity,
+              child: RaisedButton(
+                padding: EdgeInsets.all(12.0),
+                shape: StadiumBorder(),
+                child: Text(
+                  "SIGN UP",
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.black,
+                onPressed: () {
+                  Navigator.pushNamed(context, "/Login 3");
+                },
+              ),
+            ),          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(
+              context, "/home");},
+              child: Text(
+              "PROCEED WITHOUT ACOUNT",
               style: TextStyle(color: Colors.grey),
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
 }

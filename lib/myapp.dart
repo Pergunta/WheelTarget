@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.amber),
       debugShowCheckedModeBanner: false,
       showPerformanceOverlay: false,
-      home: HomePage(),
+      home: LoginTwoPage(),
       localizationsDelegates: [
         const TranslationsDelegate(),
         GlobalMaterialLocalizations.delegate,
