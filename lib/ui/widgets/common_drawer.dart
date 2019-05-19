@@ -76,21 +76,9 @@ class CommonDrawer extends StatelessWidget {
               context, "/Feed");},
               ),
           Divider(),
-          new ListTile(
-            title: Text(
-              "Settings",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
-            ),
-            leading: Icon(
-              Icons.settings,
-              color: Colors.brown,
-            ),
-            onTap: (){
-              Navigator.pop(context);
-              Navigator.pushNamed(
-              context, "/Device Settings");},
+          SizedBox(
+            height: 100.0,
           ),
-          Divider(),
           MyAboutTile()
         ],
       ),

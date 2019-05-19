@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
+import 'package:flutter_uikit/utils/uidata.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PaymentSuccessPage extends StatefulWidget {
@@ -28,7 +29,7 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-      appTitle: "Payment Success",
+      appTitle: "Payment",
       actionFirstIcon: null,
       bodyData: bodyData(),
     );
@@ -96,17 +97,16 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
                   trailing: Text("11:00 AM"),
                 ),
                 ListTile(
-                  title: Text("Pawan Kumar"),
-                  subtitle: Text("mtechviral@gmail.com"),
+                  title: Text("Chris Paul"),
+                  subtitle: Text("chrispaul_123@gmail.com"),
                   trailing: CircleAvatar(
                     radius: 20.0,
-                    backgroundImage: NetworkImage(
-                        "https://avatars0.githubusercontent.com/u/12619420?s=460&v=4"),
+                    backgroundImage: new AssetImage(UIData.pkImage),
                   ),
                 ),
                 ListTile(
                   title: Text("Amount"),
-                  subtitle: Text("\$299"),
+                  subtitle: Text("\$20.000"),
                   trailing: Text("Completed"),
                 ),
                 Card(

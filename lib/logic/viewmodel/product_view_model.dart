@@ -57,8 +57,8 @@ class ProductViewModel {
             image:
                 "https://cdn.jamesedition.com/media/W1siZiIsImxpc3RpbmdfaW1hZ2VzLzIwMTgvMDgvMTUvMDgvMTAvMDQvMzQxYzU1NGEtZGZjYS00YmJkLTgyYjAtMGY5YjEwZDk0OTVlL0xhRiAxLmpwZWciXSxbInAiLCJ0aHVtYiIsIjEwNDB4NjIwIyJdLFsicCIsImVuY29kZSIsImpwZyIsbnVsbF1d/2015-ferrari-laferrari-delivery-mileage.jpg?sha=2d7dbb7f5f000b64",
             name: "LaFerrari",
-            price: "-",
-            rating: 3.0,
+            price: "£1,123,000",
+            rating: 4.7,
             totalReviews: 0),
         Product(
             brand: "Porshe",
@@ -93,7 +93,7 @@ class ProductViewModel {
               image:
                   "https://media.bizj.us/view/img/10913820/lotus-evora-jld8865*1200xx3635-2045-0-136.jpg",
               name: "Evora",
-              price: "£70.099",
+              price: "£70,099",
               rating: 4.7,
               totalReviews: 120),
           Product(

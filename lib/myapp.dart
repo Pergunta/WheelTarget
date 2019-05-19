@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.amber),
       debugShowCheckedModeBanner: false,
       showPerformanceOverlay: false,
-      home: LoginTwoPage(),
+      home: HomePage(),
       localizationsDelegates: [
         const TranslationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: [
         const Locale("en", "US"),
       ],
-      // initialRoute: UIData.notFoundRoute,
+      initialRoute: UIData.loginTwoRoute,
 
       //routes
       routes: <String, WidgetBuilder>{

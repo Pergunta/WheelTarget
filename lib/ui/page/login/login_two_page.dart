@@ -109,8 +109,7 @@ class LoginTwoPage extends StatelessWidget {
               ),
             ),          GestureDetector(
             onTap: () {
-              Navigator.pushNamed(
-              context, "/home");},
+              Navigator.popUntil(context, ModalRoute.withName('/'));},
               child: Text(
               "PROCEED WITHOUT ACOUNT",
               style: TextStyle(color: Colors.grey),
