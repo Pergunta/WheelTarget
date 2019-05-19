@@ -17,8 +17,8 @@ class ProfileOnePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 ProfileTile(
-                  title: "Chris Paul",
-                  subtitle: "Basketball player",
+                  title: "Jack",
+                  subtitle: "Car Nut",
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -41,7 +41,7 @@ class ProfileOnePage extends StatelessWidget {
                         ),
                         child: CircleAvatar(
                           backgroundImage: NetworkImage(
-                              "https://radioimg.s3.amazonaws.com/espn929/styles/nts_image_cover_tall_775x425/s3/s3fs-public/Articles/USATSI_10126463_168381929_lowresChrisPaul.jpg?itok=iEzcooq_&c=9c0e221e44fa6b65eefa90aba9deea22"),
+                             "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
                           foregroundColor: Colors.black,
                           radius: 30.0,
                         ),
@@ -64,15 +64,15 @@ class ProfileOnePage extends StatelessWidget {
 
   //column3
   Widget descColumn() => Container(
-        height: deviceSize.height * 0.13,
+        height: deviceSize.height * 0.14,
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Text(
-              "Google Developer Expert for Flutter. Passionate #Flutter, #Android Developer. #Entrepreneur #YouTuber",
+              " A fan clutch is a thermostatic engine cooling fan that can freewheel at low temperatures when cooling is not needed, allowing the engine to warm up faster, relieving unnecessary load on the engine.",
               style: TextStyle(fontWeight: FontWeight.w700),
               textAlign: TextAlign.center,
-              maxLines: 3,
+              maxLines: 10,
               softWrap: true,
             ),
           ),
@@ -92,7 +92,7 @@ class ProfileOnePage extends StatelessWidget {
                   children: <Widget>[
                     ProfileTile(
                       title: "Website",
-                      subtitle: "about.me/imthepk",
+                      subtitle: "about.me/imtheclutch",
                     ),
                     SizedBox(
                       height: 10.0,
@@ -114,21 +114,21 @@ class ProfileOnePage extends StatelessWidget {
                   children: <Widget>[
                     ProfileTile(
                       title: "Location",
-                      subtitle: "New Delhi",
+                      subtitle: "California",
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
                     ProfileTile(
                       title: "Email",
-                      subtitle: "mtechviral@gmail.com",
+                      subtitle: "imtheclutch@gmail.com",
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
                     ProfileTile(
                       title: "Facebook",
-                      subtitle: "fb.com/imthepk",
+                      subtitle: "fb.com/imtheclutch",
                     ),
                   ],
                 ),
@@ -179,7 +179,7 @@ Widget followColumn(Size deviceSize) => Container(
             subtitle: "Posts",
           ),
           ProfileTile(
-            title: "2.5K",
+            title: "2.5M",
             subtitle: "Followers",
           ),
           ProfileTile(

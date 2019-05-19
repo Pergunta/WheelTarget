@@ -12,8 +12,14 @@ class TimelineOnePage extends StatelessWidget {
   Widget profileColumn(BuildContext context, Post post) => Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          CircleAvatar(
+
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(
+              context, "/View Profile");},
+            child: CircleAvatar(
             backgroundImage: NetworkImage(post.personImage),
+          ),
           ),
           Expanded(
               child: Padding(

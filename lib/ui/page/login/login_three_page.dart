@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
-class LoginTwoPage extends StatelessWidget {
+class LoginThreePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: loginBody(context),
+        child: loginBody(),
       ),
     );
   }
 
-  loginBody(BuildContext context) => SingleChildScrollView(
+  loginBody() => SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[loginHeader(), loginFields(context)],
+          children: <Widget>[loginHeader(), loginFields()],
         ),
       );
 
@@ -45,7 +45,7 @@ class LoginTwoPage extends StatelessWidget {
         ],
       );
 
-  loginFields(BuildContext context) => Container(
+  loginFields() => Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.min,
@@ -85,9 +85,7 @@ class LoginTwoPage extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.redAccent,
-                onPressed: () {
-                  Navigator.pushNamed(context, "/My Profile");
-                },
+                onPressed: () {},
               ),
             ),
             SizedBox(

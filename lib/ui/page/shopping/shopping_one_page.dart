@@ -133,7 +133,7 @@ class ShoppingOnePage extends StatelessWidget {
       appTitle: "Products",
       showDrawer: true,
       showFAB: false,
-      actionFirstIcon: Icons.shopping_cart,
+      actionFirstIcon: Icons.search,
       bodyData: bodyData(),
     );
   }

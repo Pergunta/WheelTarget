@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uikit/ui/page/profile/profile_one_page.dart';
+import 'package:flutter_uikit/ui/widgets/common_drawer.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 
 class ProfileTwoPage extends StatelessWidget {
@@ -151,8 +152,10 @@ class ProfileTwoPage extends StatelessWidget {
     deviceSize = MediaQuery.of(context).size;
     return CommonScaffold(
       appTitle: "Profile",
+      showDrawer: true,
+      showFAB: false,
+      actionFirstIcon: Icons.search,
       bodyData: bodyData(),
-      elevation: 0.0,
     );
   }
 }
