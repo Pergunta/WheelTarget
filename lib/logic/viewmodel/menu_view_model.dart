@@ -42,13 +42,13 @@ class MenuViewModel {
           menuColor: Color(0xff7f5741),
           icon: Icons.help,
           image: UIData.timelineImage,
-          items: ["Help"]),
+          items: ["help"]),
       Menu(
           title: "Logout",
           menuColor: Color(0xff7f5741),
           icon: Icons.exit_to_app,
           image: UIData.timelineImage,
-          items: ["Logout"]),
+          items: ["Login 2"]),
     ];
   }
 }

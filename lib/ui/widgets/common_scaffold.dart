@@ -69,10 +69,6 @@ class CommonScaffold extends StatelessWidget {
               showSearch(context: context , delegate: DataSearch());
             },
             icon: Icon(actionFirstIcon),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.more_vert),
           )
         ],
       ),

@@ -94,8 +94,7 @@ class LoginTwoPage extends StatelessWidget {
               height: 5.0,
             ),
             GestureDetector(
-            onTap: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));},
+            onTap: () => retrievalBox(context),
               child: Text(
               "Forgot your password?",
               style: TextStyle(color: Colors.redAccent),
@@ -138,4 +137,35 @@ class LoginTwoPage extends StatelessWidget {
           ],
         ),
       );
+    }
+
+    void retrievalBox(BuildContext context){
+
+      var alertDialog = AlertDialog(title: Text("Enter Your Email"),
+                                    content: 
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        TextField(
+                                          maxLines: 1,
+                                          decoration: InputDecoration(
+                                            labelText: "Email",
+                                          ),
+                                        ),RaisedButton(
+                padding: EdgeInsets.all(1.0),
+                shape: StadiumBorder(),
+                child: Text(
+                  "SEND PASSWORD",
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.redAccent,
+                onPressed: () {
+                  Navigator.popUntil(context, ModalRoute.withName('/Login 2'));;
+                },
+              )
+                                      ]));
+
+      showDialog(context: context, builder: (BuildContext context) => alertDialog);
+
+
     }

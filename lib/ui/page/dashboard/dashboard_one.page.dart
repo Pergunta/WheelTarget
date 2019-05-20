@@ -31,15 +31,6 @@ class DashboardOnePage extends StatelessWidget {
                     title: "Hi,Chris Paul ",
                     subtitle: "Welcome to Wheel Target",
                     textColor: Colors.white,
-                  ),
-                  new IconButton(
-                    icon: new Icon(
-                      Icons.more_vert,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {
-                      print("hi");
-                    },
                   )
                 ],
               ),
