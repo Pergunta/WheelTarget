@@ -86,7 +86,7 @@ class LoginTwoPage extends StatelessWidget {
                 ),
                 color: Colors.redAccent,
                 onPressed: () {
-                  Navigator.pushNamed(context, "/My Profile");
+                  Navigator.popUntil(context, ModalRoute.withName('/'));;
                 },
               ),
             ),

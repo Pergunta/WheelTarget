@@ -21,7 +21,7 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
                 shape: StadiumBorder(),
                 onPressed: () => showSuccessDialog(),
                 color: Colors.amber,
-                child: Text("Process Payment"),
+                child: Text("Confirm Payment"),
               )
             : CircularProgressIndicator(),
       );
@@ -65,7 +65,7 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
                         color: Colors.white,
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.popUntil(context, ModalRoute.withName('/'));
                       },
                     )
                   ],

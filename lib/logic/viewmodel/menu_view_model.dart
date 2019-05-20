@@ -26,13 +26,13 @@ class MenuViewModel {
             "Product Details",
           ]),
       Menu(
-          title: "Timeline",
+          title: "News Feed",
           menuColor: Color(0xff7f5741),
           icon: Icons.timeline,
           image: UIData.timelineImage,
           items: ["Feed", "Tweets", "Timeline 3", "Timeline 4"]),
       Menu(
-          title: "Payment",
+          title: "Payment Options",
           menuColor: Color(0xffddcec2),
           icon: Icons.payment,
           image: UIData.paymentImage,

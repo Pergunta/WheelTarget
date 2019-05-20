@@ -209,7 +209,7 @@ class LoginThreePage extends StatelessWidget {
                     ),
                     onPressed: () {
                       Navigator.pop(context);
-                      Navigator.pushNamed(context, "/My Profile");
+                      Navigator.popUntil(context, ModalRoute.withName('/'));
                     }),
               ),
             ],
