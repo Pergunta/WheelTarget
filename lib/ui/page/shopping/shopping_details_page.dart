@@ -23,7 +23,7 @@ class ShoppingDetailsPage extends StatelessWidget {
                         showIcon: false,
                         image: snapshot.data[0].image,
                       ),
-                      ShoppingWidgets(product: snapshot.data[0]),
+                      ShoppingWidgets(product: snapshot.data[0], context: context,),
                     ],
                   )
                 : Center(child: CircularProgressIndicator());
@@ -43,7 +43,7 @@ class ShoppingDetailsPage extends StatelessWidget {
         scaffoldKey: _scaffoldState,
         showDrawer: false,
         centerDocked: true,
-        floatingIcon: Icons.add_shopping_cart,
+        floatingIcon: Icons.shopping_cart,
         bodyData: bodyData(productBloc.productItems),
         showBottomNav: true,
       ),

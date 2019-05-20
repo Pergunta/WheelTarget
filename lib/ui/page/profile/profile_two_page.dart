@@ -9,12 +9,12 @@ class ProfileTwoPage extends StatelessWidget {
   Widget profileHeader() => Container(
         height: deviceSize.height / 4,
         width: double.infinity,
-        color: Colors.black,
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Card(
             clipBehavior: Clip.antiAlias,
-            color: Colors.black,
+            color: Colors.redAccent,
             child: FittedBox(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -24,7 +24,7 @@ class ProfileTwoPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50.0),
                         border: Border.all(width: 2.0, color: Colors.white)),
                     child: CircleAvatar(
-                      radius: 40.0,
+                      radius: 30.0,
                       backgroundImage: NetworkImage(
                           "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2779.png"),
                     ),

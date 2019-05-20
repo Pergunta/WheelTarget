@@ -6,8 +6,9 @@ import 'package:flutter_uikit/ui/widgets/label_icon.dart';
 class ShoppingWidgets extends StatelessWidget {
   Size deviceSize;
   final Product product;
+  final BuildContext context;
 
-  ShoppingWidgets({Key key, this.product}) : super(key: key);
+  ShoppingWidgets({Key key, this.product, this.context}) : super(key: key);
   Widget mainCard() => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0),
         child: Card(
@@ -16,15 +17,35 @@ class ShoppingWidgets extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
+              
               children: <Widget>[
                 Text(
-                  product.name,
+                  product.brand,
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
                 ),
-                SizedBox(
-                  height: 10.0,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        product.name,
+                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15.0),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),                
+                      RaisedButton(
+                        shape: StadiumBorder(), 
+                        color: Colors.redAccent,                     
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/Payment Success");
+                        },
+                        child: Text(
+                          'Buy Now',
+                          style: TextStyle(color: Colors.white ,fontSize: 20)
+                      ),
+                    ),
+                  ],
                 ),
-                Text(product.brand),
                 SizedBox(
                   height: 10.0,
                 ),

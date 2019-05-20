@@ -9,56 +9,59 @@ class ProfileOnePage extends StatelessWidget {
   //Column1
   Widget profileColumn() => Container(
         height: deviceSize.height * 0.24,
-        child: FittedBox(
-          alignment: Alignment.center,
+
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ProfileTile(
-                  title: "Jack",
-                  subtitle: "Car Nut",
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+            padding: const EdgeInsets.all(2.0),
+              child: Card(
+                color: Colors.redAccent,
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      IconButton(
-                        icon: Icon(Icons.chat),
-                        color: Colors.black,
-                        onPressed: () {},
+                      ProfileTile(
+                        title: "Jack",
+                        subtitle: "Car Nut",
+                        textColor: Colors.white,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              new BorderRadius.all(new Radius.circular(40.0)),
-                          border: new Border.all(
-                            color: Colors.black,
-                            width: 2.0,
-                          ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            IconButton(
+                              icon: Icon(Icons.chat),
+                              color: Colors.white,
+                              onPressed: () {},
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    new BorderRadius.all(new Radius.circular(40.0)),
+                                border: new Border.all(
+                                  color: Colors.white,
+                                  width: 2.0,
+                                ),
+                              ),
+                              child: CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                  "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
+                                foregroundColor: Colors.white,
+                                radius: 30.0,
+                              ),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.call),
+                              color: Colors.white,
+                              onPressed: () {},
+                            ),
+                          ],
                         ),
-                        child: CircleAvatar(
-                          backgroundImage: NetworkImage(
-                             "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
-                          foregroundColor: Colors.black,
-                          radius: 30.0,
-                        ),
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.call),
-                        color: Colors.black,
-                        onPressed: () {},
-                      ),
+                      )
                     ],
                   ),
-                )
-              ],
-            ),
-          ),
-        ),
-      );
+                ),
+              ),
+            
+          );
 
   //column2
 

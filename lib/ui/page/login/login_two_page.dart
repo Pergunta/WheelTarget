@@ -55,8 +55,8 @@ class LoginTwoPage extends StatelessWidget {
               child: TextField(
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: "Enter your username",
-                  labelText: "Username",
+                  hintText: "Enter your email",
+                  labelText: "Email",
                 ),
               ),
             ),
@@ -92,6 +92,33 @@ class LoginTwoPage extends StatelessWidget {
             ),
             SizedBox(
               height: 5.0,
+            ),
+            GestureDetector(
+            onTap: () {
+              Navigator.popUntil(context, ModalRoute.withName('/'));},
+              child: Text(
+              "Forgot your password?",
+              style: TextStyle(color: Colors.redAccent),
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              width: double.infinity,
+              child: RaisedButton(
+                padding: EdgeInsets.all(12.0),
+                shape: StadiumBorder(),
+                child: Text(
+                  "NEW ACCOUNT",
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.redAccent,
+                onPressed: () {
+                  Navigator.pushNamed(context, "/Login 3");
+                },
+              ),
             ),Container(
               padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
               width: double.infinity,
@@ -99,23 +126,16 @@ class LoginTwoPage extends StatelessWidget {
                 padding: EdgeInsets.all(12.0),
                 shape: StadiumBorder(),
                 child: Text(
-                  "SIGN UP",
-                  style: TextStyle(color: Colors.white),
+                  "PROCEED WITHOUT ACCOUNT",
+                  style: TextStyle(color: Colors.redAccent),
                 ),
-                color: Colors.black,
+                color: Colors.grey[200],
                 onPressed: () {
-                  Navigator.pushNamed(context, "/Login 3");
+                  Navigator.popUntil(context, ModalRoute.withName('/'));
                 },
               ),
-            ),          GestureDetector(
-            onTap: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));},
-              child: Text(
-              "PROCEED WITHOUT ACOUNT",
-              style: TextStyle(color: Colors.grey),
             ),
-          ),
-        ],
-      ),
-    );
-}
+          ],
+        ),
+      );
+    }

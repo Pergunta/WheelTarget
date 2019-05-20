@@ -194,6 +194,7 @@ class LoginThreePage extends StatelessWidget {
                 ),
                 child: MaterialButton(
                     color: Colors.redAccent,
+                    shape: StadiumBorder(),
                     highlightColor: Colors.transparent,
                     //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
                     child: Padding(

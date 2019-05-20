@@ -31,7 +31,7 @@ class CommonDrawer extends StatelessWidget {
             ),
             onTap: (){
               Navigator.popUntil(context, ModalRoute.withName('/'));
-},
+            },
           ),
           new ListTile(
             title: Text(
@@ -76,8 +76,23 @@ class CommonDrawer extends StatelessWidget {
               context, "/Feed");},
               ),
           Divider(),
+          new ListTile(
+            title: Text(
+              "Logout",
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
+            ),
+            leading: Icon(
+              Icons.exit_to_app,
+              color: Colors.blue,
+            ),
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.pushNamed(
+              context, "/Login 2");},
+          ),
+          Divider(),
           SizedBox(
-            height: 100.0,
+            height: 10.0,
           ),
           MyAboutTile()
         ],

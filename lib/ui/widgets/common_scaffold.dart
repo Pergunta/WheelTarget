@@ -42,50 +42,13 @@ class CommonScaffold extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(
-                height: double.infinity,
-                width: 180,
-                child: new InkWell(
-                  radius: 10.0,
-                  splashColor: Colors.yellow,
-                  onTap: () {},
-                  child: Center(
-                    child: new Text(
-                      "ADD TO WISHLIST",
-                      style: new TextStyle(
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: double.infinity,
-                width: 180,
-                child: new InkWell(
-                  onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(
-              context, "/Payment Success");},
-                  radius: 10.0,
-                  splashColor: Colors.yellow,
-                  child: Center(
-                    child: new Text(
-                      "BUY NOW",
-                      style: new TextStyle(
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
+              new SizedBox(
+                width: 20.0,
               ),
             ],
           ),
         ),
-      );
-
+);
 
 
   @override
@@ -115,8 +78,8 @@ class CommonScaffold extends StatelessWidget {
       ),
       drawer: showDrawer ? CommonDrawer() : null,
       body: bodyData,
-      
-      bottomNavigationBar: showBottomNav ? myBottomBar() : null,
+     
+      //bottomNavigationBar: showBottomNav ? myBottomBar() : null,
     );
   }
 }

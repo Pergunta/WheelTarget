@@ -38,14 +38,11 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
   void showSuccessDialog() {
     setState(() {
       isDataAvailable = false;
-      Future.delayed(Duration(seconds: 3)).then((_) => goToDialog());
+      Future.delayed(Duration(seconds: 1)).then((_) => goToDialog());
     });
   }
 
   goToDialog() {
-    setState(() {
-      isDataAvailable = true;
-    });
     showDialog(
         context: context,
         barrierDismissible: true,
@@ -58,14 +55,15 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
                     SizedBox(
                       height: 10.0,
                     ),
-                    FloatingActionButton(
-                      backgroundColor: Colors.black,
-                      child: Icon(
-                        Icons.clear,
-                        color: Colors.white,
+                    RaisedButton(
+                      shape: StadiumBorder(),
+                      color: Colors.redAccent,
+                      child: Text(
+                        'Continue Shopping',
+                        style: TextStyle(color: Colors.white, fontSize: 20)
                       ),
                       onPressed: () {
-                        Navigator.popUntil(context, ModalRoute.withName('/'));
+                        Navigator.popUntil(context, ModalRoute.withName('/Shopping List'));
                       },
                     )
                   ],
@@ -88,7 +86,7 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
               children: <Widget>[
                 ProfileTile(
                   title: "Thank You!",
-                  textColor: Colors.purple,
+                  textColor: Colors.redAccent,
                   subtitle: "Your transaction was successful",
                 ),
                 ListTile(
