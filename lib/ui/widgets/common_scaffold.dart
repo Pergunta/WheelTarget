@@ -131,7 +131,8 @@ class DataSearch extends SearchDelegate<String>{
 
     return ListView.builder(itemCount:suggestionList.length, itemBuilder: (context,index)=>ListTile(
       onTap: (){
-        showResults(context);
+        Navigator.pop(context);
+        Navigator.pushNamed(context, "/Shopping Details");
       },
       leading: Icon(Icons.arrow_right),
       title: RichText(
