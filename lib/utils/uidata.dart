@@ -42,7 +42,7 @@ class UIData {
   static const String loginImage = "$imageDir/login.jpg";
   static const String paymentImage = "$imageDir/payment.jpg";
   static const String settingsImage = "$imageDir/setting.jpeg";
-  static const String shoppingImage = "$imageDir/shopping.jpeg";
+  static const String shoppingImage = "$imageDir/shopping.jpg";
   static const String timelineImage = "$imageDir/timeline.jpeg";
   static const String verifyImage = "$imageDir/verification.jpg";
 
