@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 class ProfileOnePage extends StatelessWidget {
   var deviceSize;
 
@@ -28,9 +28,10 @@ class ProfileOnePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             IconButton(
-                              icon: Icon(Icons.chat),
+                              icon: Icon(Icons.call),
                               color: Colors.white,
-                              onPressed: () {},
+                              onPressed: () => launch("tel://911231113"),
+                            
                             ),
                             Container(
                               decoration: BoxDecoration(
@@ -50,7 +51,7 @@ class ProfileOnePage extends StatelessWidget {
                             ),
                             IconButton(
                               icon: Icon(Icons.call),
-                              color: Colors.white,
+                              color: Colors.redAccent,
                               onPressed: () {},
                             ),
                           ],
