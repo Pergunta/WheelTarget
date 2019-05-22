@@ -6,6 +6,7 @@ import 'package:flutter_uikit/ui/widgets/common_drawer.dart';
 import 'package:flutter_uikit/ui/widgets/label_icon.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TimelineOnePage extends StatelessWidget {
   //column1
@@ -79,6 +80,7 @@ class TimelineOnePage extends StatelessWidget {
       elevation: 2.0,
       child: Column(
         children: <Widget>[
+         
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: profileColumn(context, post),
@@ -92,17 +94,14 @@ class TimelineOnePage extends StatelessWidget {
                   fontFamily: UIData.ralewayFont),
             ),
           ),
-          SizedBox(
-            height: 10.0,
+           GestureDetector(
+              onTap: _launchURL,
+              child: Image.network(
+              post.messageImage, // On click should redirect to an UR
+              fit: BoxFit.cover,
+            )
           ),
-          post.messageImage != null
-              ? Image.network(
-                  post.messageImage,
-                  fit: BoxFit.cover,
-                )
-              : Container(),
-          post.messageImage != null ? Container() : CommonDivider(),
-          actionColumn(post),
+        
         ],
       ),
     );
@@ -176,3 +175,12 @@ class TimelineOnePage extends StatelessWidget {
     );
   }
 }
+
+ _launchURL() async {
+    const url = 'https://www.bmw.com/en/bmw-models/techdata/Z4-M40i.html';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
