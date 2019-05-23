@@ -3,66 +3,61 @@ import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 class ProfileOnePage extends StatelessWidget {
   var deviceSize;
 
   //Column1
   Widget profileColumn() => Container(
         height: deviceSize.height * 0.24,
-
-          child: Padding(
-            padding: const EdgeInsets.all(2.0),
-              child: Card(
-                color: Colors.redAccent,
-                  child: Column(
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Card(
+            color: Colors.redAccent,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ProfileTile(
+                  title: "Jack",
+                  subtitle: "Car Nut",
+                  textColor: Colors.white,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      ProfileTile(
-                        title: "Jack",
-                        subtitle: "Car Nut",
-                        textColor: Colors.white,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            IconButton(
-                              icon: Icon(Icons.call),
-                              color: Colors.white,
-                              onPressed: () => launch("tel://911231113"),
-                            
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    new BorderRadius.all(new Radius.circular(40.0)),
-                                border: new Border.all(
-                                  color: Colors.white,
-                                  width: 2.0,
-                                ),
-                              ),
-                              child: CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                  "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
-                                foregroundColor: Colors.white,
-                                radius: 30.0,
-                              ),
-                            ),
-                            IconButton(
-                              icon: Icon(Icons.call),
-                              color: Colors.redAccent,
-                              onPressed: () {},
-                            ),
-                          ],
+                      SizedBox(width: 50),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              new BorderRadius.all(new Radius.circular(40.0)),
+                          border: new Border.all(
+                            color: Colors.white,
+                            width: 2.0,
+                          ),
                         ),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
+                          foregroundColor: Colors.white,
+                          radius: 30.0,
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.call),
+                        color: Colors.white,
+                        iconSize: 30,
+                        onPressed: () => launch("tel://911231113"),
                       )
                     ],
                   ),
-                ),
-              ),
-            
-          );
+                )
+              ],
+            ),
+          ),
+        ),
+      );
 
   //column2
 
