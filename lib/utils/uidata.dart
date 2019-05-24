@@ -38,14 +38,16 @@ class UIData {
   //images
   static const String imageDir = "assets/images";
   static const String pkImage = "$imageDir/pk.jpg";
-  static const String profileImage = "$imageDir/profile.jpg";
+  static const String profileImage = "$imageDir/profile31.png";
   static const String blankImage = "$imageDir/blank.jpg";
   static const String dashboardImage = "$imageDir/dashboard.jpg";
   static const String loginImage = "$imageDir/login.jpg";
   static const String paymentImage = "$imageDir/payment.jpg";
   static const String settingsImage = "$imageDir/setting.jpeg";
   static const String shoppingImage = "$imageDir/shopping.jpg";
-  static const String timelineImage = "$imageDir/timeline.jpeg";
+  static const String helpImage = "$imageDir/help1.png";
+  static const String logoutImage = "$imageDir/logout1.png";
+  static const String timelineImage = "$imageDir/forum.png";
   static const String verifyImage = "$imageDir/verification.jpg";
 
   //login

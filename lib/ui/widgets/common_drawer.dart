@@ -82,7 +82,7 @@ class CommonDrawer extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
             ),
             leading: Icon(
-              Icons.exit_to_app,
+              Icons.arrow_forward_ios,
               color: Colors.blue,
             ),
             onTap: (){
