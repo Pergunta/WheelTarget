@@ -26,7 +26,7 @@ class MenuViewModel {
             "Product Details",
           ]),
       Menu(
-          title: "News Feed",
+          title: "Forum",
           menuColor: Color(0xff7f5741),
           icon: Icons.timeline,
           image: UIData.timelineImage,
@@ -41,13 +41,13 @@ class MenuViewModel {
           title: "Help",
           menuColor: Color(0xff7f5741),
           icon: Icons.help,
-          image: UIData.timelineImage,
-          items: ["help"]),
+          image: UIData.helpImage,
+          items: ["Help"]),
       Menu(
           title: "Logout",
           menuColor: Color(0xff7f5741),
-          icon: Icons.exit_to_app,
-          image: UIData.timelineImage,
+          icon: Icons.arrow_forward_ios,
+          image: UIData.logoutImage,
           items: ["Login 2"]),
     ];
   }

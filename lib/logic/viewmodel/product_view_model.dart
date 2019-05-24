@@ -101,7 +101,7 @@ class ProductViewModel {
               description: "X1/9",
               image:
                   "https://cdn.bringatrailer.com/wp-content/uploads/2017/06/IMG_1506-e1502217129406-940x725.jpg",
-            name: "Fiat",
+            name: "x1/9",
             price: "£26,059",
             rating: 4.0,
             totalReviews: 33),
@@ -119,7 +119,7 @@ class ProductViewModel {
             description: "2002 turbo",
             image:
                 "https://bonsrapazes.com/wp-content/uploads/2018/10/https_2F2Fhypebeast.com2Fimage2F20182F102Fbmw-2002-turbo-original-1975-chamonix-white-auction-2.jpg",
-            name: "BMW",
+            name: "2002 turbo",
             price: "£159,909",
             rating: 4.1,
             totalReviews: 22),
