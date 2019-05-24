@@ -126,7 +126,10 @@ class TimelineOnePage extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.black, fontWeight: FontWeight.w700),
                   ),
-                  Icon(Icons.arrow_drop_down)
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.arrow_drop_down),
+                  ),
                 ],
               ),
             ),
@@ -139,7 +142,7 @@ class TimelineOnePage extends StatelessWidget {
         forceElevated: true,
         pinned: true,
         floating: true,
-        bottom: bottomBar(),
+        //bottom: bottomBar(),
       );
 
   Widget bodyList(List<Post> posts) => SliverList(

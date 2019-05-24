@@ -26,7 +26,6 @@ class LoginTwoPage extends StatelessWidget {
             image: new AssetImage("assets/images/logo1.png"),
             width: 50,
             height: 50,
-      
           ),
           SizedBox(
             height: 30.0,
@@ -86,7 +85,8 @@ class LoginTwoPage extends StatelessWidget {
                 ),
                 color: Colors.redAccent,
                 onPressed: () {
-                  Navigator.popUntil(context, ModalRoute.withName('/'));;
+                  Navigator.popUntil(context, ModalRoute.withName('/'));
+                  ;
                 },
               ),
             ),
@@ -94,10 +94,10 @@ class LoginTwoPage extends StatelessWidget {
               height: 5.0,
             ),
             GestureDetector(
-            onTap: () => retrievalBox(context),
+              onTap: () => retrievalBox(context),
               child: Text(
-              "Forgot your password?",
-              style: TextStyle(color: Colors.redAccent),
+                "Forgot your password?",
+                style: TextStyle(color: Colors.redAccent),
               ),
             ),
             SizedBox(
@@ -118,54 +118,52 @@ class LoginTwoPage extends StatelessWidget {
                   Navigator.pushNamed(context, "/Login 3");
                 },
               ),
-            ),Container(
-              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
-              width: double.infinity,
-              child: RaisedButton(
-                padding: EdgeInsets.all(12.0),
-                shape: StadiumBorder(),
-                child: Text(
-                  "PROCEED WITHOUT ACCOUNT",
-                  style: TextStyle(color: Colors.redAccent),
-                ),
-                color: Colors.grey[200],
-                onPressed: () {
-                  Navigator.popUntil(context, ModalRoute.withName('/'));
-                },
-              ),
             ),
+            // Container(
+            //   padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+            //   width: double.infinity,
+            //   child: RaisedButton(
+            //     padding: EdgeInsets.all(12.0),
+            //     shape: StadiumBorder(),
+            //     child: Text(
+            //       "PROCEED WITHOUT ACCOUNT",
+            //       style: TextStyle(color: Colors.redAccent),
+            //     ),
+            //     color: Colors.grey[200],
+            //     onPressed: () {
+            //       Navigator.popUntil(context, ModalRoute.withName('/'));
+            //     },
+            //   ),
+            // ),
           ],
         ),
       );
-    }
+}
 
-    void retrievalBox(BuildContext context){
+void retrievalBox(BuildContext context) {
+  var alertDialog = AlertDialog(
+      title: Text("Enter Your Email"),
+      content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        TextField(
+          maxLines: 1,
+          decoration: InputDecoration(
+            labelText: "Email",
+          ),
+        ),
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "SEND PASSWORD",
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.redAccent,
+          onPressed: () {
+            Navigator.popUntil(context, ModalRoute.withName('/Login 2'));
+            ;
+          },
+        )
+      ]));
 
-      var alertDialog = AlertDialog(title: Text("Enter Your Email"),
-                                    content: 
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: <Widget>[
-                                        TextField(
-                                          maxLines: 1,
-                                          decoration: InputDecoration(
-                                            labelText: "Email",
-                                          ),
-                                        ),RaisedButton(
-                padding: EdgeInsets.all(1.0),
-                shape: StadiumBorder(),
-                child: Text(
-                  "SEND PASSWORD",
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.redAccent,
-                onPressed: () {
-                  Navigator.popUntil(context, ModalRoute.withName('/Login 2'));;
-                },
-              )
-                                      ]));
-
-      showDialog(context: context, builder: (BuildContext context) => alertDialog);
-
-
-    }
+  showDialog(context: context, builder: (BuildContext context) => alertDialog);
+}

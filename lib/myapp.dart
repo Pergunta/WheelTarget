@@ -15,6 +15,8 @@ import 'package:flutter_uikit/ui/page/settings/settings_one_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/product_detail_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_details_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_one_page.dart';
+import 'package:flutter_uikit/ui/page/shopping/shopping_buy_sell.dart';
+import 'package:flutter_uikit/ui/page/shopping/shopping_sell.dart';
 import 'package:flutter_uikit/ui/page/timeline/timeline_one_page.dart';
 import 'package:flutter_uikit/ui/page/timeline/timeline_two_page.dart';
 import 'package:flutter_uikit/utils/translations.dart';
@@ -51,10 +53,10 @@ class MyApp extends StatelessWidget {
         UIData.notFoundRoute: (BuildContext context) => NotFoundPage(),
         UIData.settingsOneRoute: (BuildContext context) => SettingsOnePage(),
         UIData.shoppingOneRoute: (BuildContext context) => ShoppingOnePage(),
-        UIData.shoppingTwoRoute: (BuildContext context) =>
-            ShoppingDetailsPage(),
-        UIData.shoppingThreeRoute: (BuildContext context) =>
-            ProductDetailPage(),
+        UIData.shoppingTwoRoute: (BuildContext context) => ShoppingDetailsPage(),
+        UIData.shoppingThreeRoute: (BuildContext context) => ProductDetailPage(),
+        UIData.shoppingBuySell: (BuildContext context) => ShoppingBuySell(),
+        UIData.shoppingSell: (BuildContext context) => ShoppingSell(),
         UIData.loginOneRoute: (BuildContext context) => LoginPage(),
         UIData.loginTwoRoute: (BuildContext context) => LoginTwoPage(),
         UIData.loginThreeRoute: (BuildContext context) => LoginThreePage(),

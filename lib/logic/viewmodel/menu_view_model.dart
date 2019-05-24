@@ -21,7 +21,7 @@ class MenuViewModel {
           icon: Icons.shopping_cart,
           image: UIData.shoppingImage,
           items: [
-            "Shopping List",
+            "Buy Sell",
             "Shopping Details",
             "Product Details",
           ]),

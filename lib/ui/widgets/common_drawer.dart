@@ -59,7 +59,7 @@ class CommonDrawer extends StatelessWidget {
             onTap: (){
               Navigator.pop(context);
               Navigator.pushNamed(
-              context, "/Shopping List");},
+              context, "/Buy Sell");},
           ),
           new ListTile(
             title: Text(
