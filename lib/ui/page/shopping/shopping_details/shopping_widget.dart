@@ -52,11 +52,7 @@ class ShoppingWidgets extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    LabelIcon(
-                      icon: Icons.star,
-                      iconColor: Colors.cyan,
-                      label: product.rating.toString(),
-                    ),
+                    SizedBox(width: 100),
                     Text(
                       product.price,
                       style: TextStyle(

@@ -143,42 +143,32 @@ class _ShoppingSellState extends State<ShoppingSell>
                     padding:
                         EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
                     child: TextField(
-                      controller: MoneyMaskedTextController(leftSymbol: '£'),
                       keyboardType: TextInputType.number,
                       maxLines: 1,
                       decoration: InputDecoration(
-                        labelText: "Price",
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
-                    child: DateTimePickerFormField(
-                      inputType: InputType.date,
-                      format: DateFormat("yyyy-MM-dd"),
-                      initialDate: DateTime.now(),
-                      lastDate: DateTime.now(),
-                      editable: false,
-                      decoration: InputDecoration(
-                          labelText: 'Date', hasFloatingPlaceholder: false),
-                      onChanged: (dt) {
-                        setState(() => date2 = dt);
-
-                        print('Selected date: $date2');
-                      },
+                          labelText: "Price", suffixText: "£"),
                     ),
                   ),
                   Container(
                     padding:
                         EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
                     child: TextField(
-                      controller: MoneyMaskedTextController(
-                          initialValue: 0, rightSymbol: 'km'),
+                      keyboardType: TextInputType.number,
+                      controller: MaskedTextController(mask: '0000-00'),
                       maxLines: 1,
                       decoration: InputDecoration(
-                        labelText: "Mileage",
-                      ),
+                          labelText: "Register Year",
+                          helperText: 'YYYY-MM'),
+                    ),
+                  ),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      maxLines: 1,
+                      decoration: InputDecoration(
+                          labelText: "Mileage", suffixText: 'Km'),
                     ),
                   ),
                   Container(
@@ -205,7 +195,7 @@ class _ShoppingSellState extends State<ShoppingSell>
                           padding: const EdgeInsets.symmetric(
                               vertical: 10.0, horizontal: 42.0),
                           child: Text(
-                            "ADD SALE",
+                            "SELL",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 25.0,
@@ -236,8 +226,9 @@ class _ShoppingSellState extends State<ShoppingSell>
 
 void retrievalBox(BuildContext context) {
   var alertDialog = AlertDialog(
-      title: Text("Operation Successful!"),
+      title: Text("SUCCESS!"),
       content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        Text('Vehicle is up for sale!'),
         RaisedButton(
           padding: EdgeInsets.all(1.0),
           shape: StadiumBorder(),

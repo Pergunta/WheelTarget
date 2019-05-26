@@ -19,42 +19,73 @@ class ShoppingActionState extends State<ShoppingAction> {
   String _value = "Cyan";
   String _sizeValue = "M";
 
-  Widget colorsCard() => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            "Colors",
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20.0),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            children: widget.product.colors
-                .map((pc) => Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ChoiceChip(
-                          selectedColor: pc.color,
-                          label: Text(
-                            pc.colorName,
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          selected: _value == pc.colorName,
-                          onSelected: (selected) {
-                            setState(() {
-                              _value = selected ? pc.colorName : null;
-                            });
-                          }),
-                    ))
-                .toList(),
-          ),
-        ],
+  Widget colorsCard() => Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              "Contacts",
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Row(
+              children: <Widget>[
+                Text(
+                  "Username: ",
+                  style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.redAccent),
+                ),
+                Text(
+                  "Unregistered User",
+                  style:
+                      TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Text(
+                  "Phone Number: ",
+                  style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.redAccent),
+                ),
+                Text(
+                  "999-666-333",
+                  style:
+                      TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Text(
+                  "Email: ",
+                  style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.redAccent),
+                ),
+                Text(
+                  "tempmail@gmail.com",
+                  style:
+                      TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ],
+        ),
       );
-
-  
-
- 
 
   @override
   Widget build(BuildContext context) {
@@ -62,16 +93,6 @@ class ShoppingActionState extends State<ShoppingAction> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         colorsCard(),
-        CommonDivider(),
-        SizedBox(
-          height: 5.0,
-        ),
-        
-        CommonDivider(),
-        SizedBox(
-          height: 5.0,
-        ),
-      
       ],
     );
   }

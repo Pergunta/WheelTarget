@@ -38,12 +38,6 @@ class MenuViewModel {
           image: UIData.paymentImage,
           items: ["Credit Card", "Payment Success", "Payment 3", "Payment 4"]),
       Menu(
-          title: "Help",
-          menuColor: Color(0xff7f5741),
-          icon: Icons.help,
-          image: UIData.helpImage,
-          items: ["Help"]),
-      Menu(
           title: "Logout",
           menuColor: Color(0xff7f5741),
           icon: Icons.arrow_forward_ios,
