@@ -191,12 +191,14 @@ class CreditCardPage extends StatelessWidget {
         ),
       );
 
-  Widget floatingBar() => Ink(
+  Widget floatingBar(BuildContext context) => Ink(
         decoration: ShapeDecoration(
             shape: StadiumBorder(),
             gradient: LinearGradient(colors: UIData.kitGradients)),
         child: FloatingActionButton.extended(
-          onPressed: () {},
+          onPressed: () {
+            retrievalBox(context);
+          },
           backgroundColor: Colors.transparent,
           icon: Icon(
             FontAwesomeIcons.amazonPay,
@@ -220,8 +222,30 @@ class CreditCardPage extends StatelessWidget {
         title: Text("Credit Card"),
       ),
       body: bodyData(),
-      floatingActionButton: floatingBar(),
+      floatingActionButton: floatingBar(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
+}
+
+void retrievalBox(BuildContext context) {
+  var alertDialog = AlertDialog(
+      title: Text("SUCCESS!"),
+      content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        Text('Card is now registered!'),
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "RETURN",
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.redAccent,
+          onPressed: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          },
+        )
+      ]));
+
+  showDialog(context: context, builder: (BuildContext context) => alertDialog);
 }
