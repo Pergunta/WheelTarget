@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uikit/model/product.dart';
 
 class ProductViewModel {
-  
   List<Product> productsItems;
 
   ProductViewModel({this.productsItems});
@@ -11,9 +10,9 @@ class ProductViewModel {
         Product(
             brand: "Fiat",
             description: "Diesel, Manual, 1300cm3 90cv , 02/2010 40,252km",
-            date:"02/2010" ,
+            date: "02/2010",
             fuel: "Diesel",
-            km:"40 252km",
+            km: "40 252km",
             engine: "1 300 cm3 95 cv",
             gearbox: "Manual",
             image:
@@ -21,30 +20,13 @@ class ProductViewModel {
             name: "500",
             price: "£20,000",
             rating: 4.0,
-            colors: [
-              ProductColor(
-                color: Colors.red,
-                colorName: "Red",
-              ),
-              ProductColor(
-                color: Colors.green,
-                colorName: "Green",
-              ),
-              ProductColor(
-                color: Colors.blue,
-                colorName: "Blue",
-              ),
-              ProductColor(
-                color: Colors.cyan,
-                colorName: "Cyan",
-              )
-            ],
-            
-            sizes: ["S", "M", "L", "XL"],
             totalReviews: 170),
         Product(
             brand: "BMW",
             description: "I8 series",
+            date: "02/2018",
+            fuel: "Hybrid",
+            km: "5 252km",
             image:
                 "https://images.autouncle.com/pt/car_images/medium_5b2da5b6-19aa-4d0c-ac93-6fa1c37380cc_bmw-i8-edrive-365cv.jpg",
             name: "I8",
@@ -70,37 +52,37 @@ class ProductViewModel {
             rating: 4.0,
             totalReviews: 5),
         Product(
-              brand: "Mercedez",
-              description: "AMG -GT",
-              image:
-                  "https://cdn1.evo.co.uk/sites/evo/files/styles/gallery_adv/public/2018/02/edo-8.jpg?itok=KPk3R-Kz",
-              name: "AMG",
-              price: "£200,399",
-              rating: 4.8,
-              totalReviews: 12),
-          Product(
-              brand: "Fendt",
-              description: "Farmer20000",
-              image:
-                  "https://canalrural.uol.com.br/wp-content/uploads/2019/05/Trator-Fendt-05-640x426.png",
-              name: "farmer",
-              price: "£280,099",
-              rating: 4.2,
-              totalReviews: 28),
-          Product(
-              brand: "Lotus",
-              description: "Evora",
-              image:
-                  "https://media.bizj.us/view/img/10913820/lotus-evora-jld8865*1200xx3635-2045-0-136.jpg",
-              name: "Evora",
-              price: "£70,099",
-              rating: 4.7,
-              totalReviews: 120),
-          Product(
-              brand: "Fiat",
-              description: "X1/9",
-              image:
-                  "https://cdn.bringatrailer.com/wp-content/uploads/2017/06/IMG_1506-e1502217129406-940x725.jpg",
+            brand: "Mercedez",
+            description: "AMG -GT",
+            image:
+                "https://cdn1.evo.co.uk/sites/evo/files/styles/gallery_adv/public/2018/02/edo-8.jpg?itok=KPk3R-Kz",
+            name: "AMG",
+            price: "£200,399",
+            rating: 4.8,
+            totalReviews: 12),
+        Product(
+            brand: "Fendt",
+            description: "Farmer20000",
+            image:
+                "https://canalrural.uol.com.br/wp-content/uploads/2019/05/Trator-Fendt-05-640x426.png",
+            name: "farmer",
+            price: "£280,099",
+            rating: 4.2,
+            totalReviews: 28),
+        Product(
+            brand: "Lotus",
+            description: "Evora",
+            image:
+                "https://media.bizj.us/view/img/10913820/lotus-evora-jld8865*1200xx3635-2045-0-136.jpg",
+            name: "Evora",
+            price: "£70,099",
+            rating: 4.7,
+            totalReviews: 120),
+        Product(
+            brand: "Fiat",
+            description: "X1/9",
+            image:
+                "https://cdn.bringatrailer.com/wp-content/uploads/2017/06/IMG_1506-e1502217129406-940x725.jpg",
             name: "x1/9",
             price: "£26,059",
             rating: 4.0,

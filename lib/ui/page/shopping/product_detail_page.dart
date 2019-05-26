@@ -20,7 +20,7 @@ class ProductDetailPage extends StatelessWidget {
                       LoginBackground(
                         showIcon: false,
                       ),
-                      ProductDetailWidgets(product:snapshot.data[0]),
+                      ProductDetailWidgets(product:snapshot.data[1]),
                     ],
                   )
                 : Center(child: CircularProgressIndicator());

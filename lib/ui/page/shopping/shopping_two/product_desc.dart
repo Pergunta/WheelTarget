@@ -28,8 +28,7 @@ class ProductDesc extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.normal),
               ),
-              trailing: 
-                  new Text(product.price+"euros",
+              trailing: new Text(product.price + "euros",
                   style: new TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
@@ -45,12 +44,24 @@ class ProductDesc extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-            
-                Text(product.fuel, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
-                Text(product.date, style :new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
-                Text(product.km, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
-                Text(product.engine, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
-                Text(product.gearbox, style: new TextStyle( fontSize:15.0 ,fontWeight: FontWeight.normal, color:Colors.white ),textAlign: TextAlign.left),
+                Text(product.fuel,
+                    style: new TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white),
+                    textAlign: TextAlign.left),
+                Text(product.date,
+                    style: new TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white),
+                    textAlign: TextAlign.left),
+                Text(product.km,
+                    style: new TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white),
+                    textAlign: TextAlign.left),
               ],
             ),
           ),
@@ -90,7 +101,7 @@ class ProductDesc extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.w700)),
                       new RawChip(
                         label: new Text(
-                          "Red Blue",
+                          "White",
                           style: TextStyle(color: Colors.white),
                         ),
                         backgroundColor: Colors.red,

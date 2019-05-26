@@ -107,9 +107,9 @@ class ProfileTwoPage extends StatelessWidget {
         ),
       );
 
-  Widget postCard() => Container(
+  Widget postCard(BuildContext context) => Container(
         width: double.infinity,
-        height: deviceSize.height / 3,
+        height: deviceSize.height / 2,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 5.0),
           child: Column(
@@ -124,25 +124,51 @@ class ProfileTwoPage extends StatelessWidget {
               ),
               profileColumn(),
               Expanded(
-                child: Card(
-                  elevation: 2.0,
+                child: GestureDetector(
+                  onTap:() {Navigator.pushNamed(context, "/Product Details");},
                   child: Image.network(
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2016_BMW_i8.jpg/1200px-2016_BMW_i8.jpg",
+                    "https://images.autouncle.com/pt/car_images/medium_5b2da5b6-19aa-4d0c-ac93-6fa1c37380cc_bmw-i8-edrive-365cv.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10.0),
+                decoration: new BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                ),
+                child: MaterialButton(
+                    color: Colors.redAccent,
+                    shape: StadiumBorder(),
+                    highlightColor: Colors.transparent,
+                    //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 42.0),
+                      child: Text(
+                        "SELL VEHICLE",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25.0,
+                            fontFamily: "WorkSansBold"),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/Shopping Sell");
+                    }),
               ),
             ],
           ),
         ),
       );
-  Widget bodyData() => SingleChildScrollView(
+
+  Widget bodyData(BuildContext context) => SingleChildScrollView(
         child: Column(
           children: <Widget>[
             profileHeader(),
             followColumn(deviceSize),
             imagesCard(),
-            postCard(),
+            postCard(context),
           ],
         ),
       );
@@ -155,7 +181,7 @@ class ProfileTwoPage extends StatelessWidget {
       showDrawer: true,
       showFAB: false,
       actionFirstIcon: Icons.search,
-      bodyData: bodyData(),
+      bodyData: bodyData(context),
     );
   }
 }

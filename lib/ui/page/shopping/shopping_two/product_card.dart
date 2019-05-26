@@ -49,7 +49,7 @@ class _ProductCardState extends State<ProductCard>
                   borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(30.0),
                       topRight: const Radius.circular(30.0)),
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 child: new ProductDesc(product: widget.product),
               ),
