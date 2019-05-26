@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uikit/ui/page/shopping/image_picker_handler.dart';
 import 'package:flutter_uikit/ui/page/shopping/image_picker_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:intl/intl.dart';
 
 final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -41,6 +44,8 @@ class _ShoppingSellState extends State<ShoppingSell>
   AnimationController _controller;
   ImagePickerHandler imagePicker;
 
+  DateTime date2;
+
   @override
   void initState() {
     super.initState();
@@ -69,7 +74,7 @@ class _ShoppingSellState extends State<ShoppingSell>
           style: new TextStyle(color: Colors.white),
         ),
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           Stack(
             alignment: Alignment.topCenter,
@@ -116,51 +121,103 @@ class _ShoppingSellState extends State<ShoppingSell>
                   ),
                   Container(
                     padding:
-                        EdgeInsets.symmetric(vertical: 16.0, horizontal: 30.0),
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
                     child: TextField(
                       maxLines: 1,
                       decoration: InputDecoration(
-                        labelText: "Car Model",
+                        labelText: "Brand",
                       ),
                     ),
                   ),
                   Container(
                     padding:
-                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
                     child: TextField(
                       maxLines: 1,
-                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: "Model",
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
+                    child: TextField(
+                      controller: MoneyMaskedTextController(leftSymbol: '£'),
+                      keyboardType: TextInputType.number,
+                      maxLines: 1,
                       decoration: InputDecoration(
                         labelText: "Price",
                       ),
                     ),
                   ),
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 340.0),
-                decoration: new BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                ),
-                child: MaterialButton(
-                    color: Colors.redAccent,
-                    shape: StadiumBorder(),
-                    highlightColor: Colors.transparent,
-                    //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 42.0),
-                      child: Text(
-                        "ADD SALE",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25.0,
-                            fontFamily: "WorkSansBold"),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
+                    child: DateTimePickerFormField(
+                      inputType: InputType.date,
+                      format: DateFormat("yyyy-MM-dd"),
+                      initialDate: DateTime.now(),
+                      lastDate: DateTime.now(),
+                      editable: false,
+                      decoration: InputDecoration(
+                          labelText: 'Date', hasFloatingPlaceholder: false),
+                      onChanged: (dt) {
+                        setState(() => date2 = dt);
+
+                        print('Selected date: $date2');
+                      },
+                    ),
+                  ),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
+                    child: TextField(
+                      controller: MoneyMaskedTextController(
+                          initialValue: 0, rightSymbol: 'km'),
+                      maxLines: 1,
+                      decoration: InputDecoration(
+                        labelText: "Mileage",
                       ),
                     ),
-                    onPressed: () {
-                      retrievalBox(context);
-                    }),
+                  ),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
+                    child: TextField(
+                      maxLines: 3,
+                      decoration: InputDecoration(
+                        labelText: "Description",
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0),
+                    decoration: new BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    child: MaterialButton(
+                        color: Colors.redAccent,
+                        shape: StadiumBorder(),
+                        highlightColor: Colors.transparent,
+                        //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 42.0),
+                          child: Text(
+                            "ADD SALE",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25.0,
+                                fontFamily: "WorkSansBold"),
+                          ),
+                        ),
+                        onPressed: () {
+                          retrievalBox(context);
+                        }),
+                  ),
+                  SizedBox(height: 200)
+                ],
               ),
             ],
           ),

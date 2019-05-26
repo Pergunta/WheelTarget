@@ -45,7 +45,7 @@ class LoginThreePage extends StatelessWidget {
   Widget _buildSignUp(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 23.0),
-      child: Column(
+      child: ListView(
         children: <Widget>[
           Stack(
             alignment: Alignment.topCenter,
@@ -170,7 +170,7 @@ class LoginThreePage extends StatelessWidget {
                               FontAwesomeIcons.lock,
                               color: Colors.black,
                             ),
-                            hintText: "Confirmation",
+                            hintText: "Confirm Password",
                             hintStyle: TextStyle(
                                 fontFamily: "WorkSansSemiBold", fontSize: 16.0),
                             suffixIcon: GestureDetector(
@@ -213,6 +213,7 @@ class LoginThreePage extends StatelessWidget {
                       Navigator.popUntil(context, ModalRoute.withName('/'));
                     }),
               ),
+              SizedBox(height: 600)
             ],
           ),
         ],

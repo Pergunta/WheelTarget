@@ -119,22 +119,22 @@ class LoginTwoPage extends StatelessWidget {
                 },
               ),
             ),
-            // Container(
-            //   padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
-            //   width: double.infinity,
-            //   child: RaisedButton(
-            //     padding: EdgeInsets.all(12.0),
-            //     shape: StadiumBorder(),
-            //     child: Text(
-            //       "PROCEED WITHOUT ACCOUNT",
-            //       style: TextStyle(color: Colors.redAccent),
-            //     ),
-            //     color: Colors.grey[200],
-            //     onPressed: () {
-            //       Navigator.popUntil(context, ModalRoute.withName('/'));
-            //     },
-            //   ),
-            // ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              width: double.infinity,
+              child: RaisedButton(
+                padding: EdgeInsets.all(12.0),
+                shape: StadiumBorder(),
+                child: Text(
+                  "PROCEED WITHOUT ACCOUNT",
+                  style: TextStyle(color: Colors.redAccent),
+                ),
+                color: Colors.grey[200],
+                onPressed: () {
+                  Navigator.popUntil(context, ModalRoute.withName('/'));
+                },
+              ),
+            ),
           ],
         ),
       );
