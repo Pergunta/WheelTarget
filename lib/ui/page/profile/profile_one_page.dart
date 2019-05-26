@@ -1,12 +1,27 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_uikit/ui/page/shopping/image_picker_handler2.dart';
 import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProfileOnePage extends StatelessWidget {
-  var deviceSize;
+class ProfileOnePage extends StatefulWidget {
+  ProfileOnePage({Key key, this.title}) : super(key: key);
+  final String title;
+  @override
+  _ProfileOnePageState createState() => new _ProfileOnePageState();
+}
 
+class _ProfileOnePageState extends State<ProfileOnePage>
+    with TickerProviderStateMixin, ImagePickerListener {
+  AnimationController _controller;
+  ImagePickerHandler2 imagePicker;
+
+  DateTime date2;
+
+  var deviceSize;
   //Column1
   Widget profileColumn() => Container(
         height: deviceSize.height * 0.24,
@@ -60,6 +75,18 @@ class ProfileOnePage extends StatelessWidget {
       );
 
   //column2
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = new AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    imagePicker = new ImagePickerHandler2(this, _controller);
+    imagePicker.init();
+  }
 
   //column3
   Widget descColumn() => Container(
@@ -137,7 +164,61 @@ class ProfileOnePage extends StatelessWidget {
         ),
       );
 
-  Widget bodyData() {
+  Widget postCard(BuildContext context) => Container(
+        width: double.infinity,
+        height: deviceSize.height / 2,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 5.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Post",
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
+                ),
+              ),
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, "/Shopping Details");
+                  },
+                  child: Image.network(
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2017_Fiat_500_facelift.jpg/1920px-2017_Fiat_500_facelift.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10.0),
+                decoration: new BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                ),
+                child: MaterialButton(
+                    color: Colors.redAccent,
+                    shape: StadiumBorder(),
+                    highlightColor: Colors.transparent,
+                    //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 42.0),
+                      child: Text(
+                        "REQUEST TRADE",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25.0,
+                            fontFamily: "WorkSansBold"),
+                      ),
+                    ),
+                    onPressed: () => imagePicker.showDialog(context)),
+              ),
+            ],
+          ),
+        ),
+      );
+
+  Widget bodyData(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
@@ -147,15 +228,17 @@ class ProfileOnePage extends StatelessWidget {
           CommonDivider(),
           descColumn(),
           CommonDivider(),
-          accountColumn()
+          accountColumn(),
+          CommonDivider(),
+          postCard(context)
         ],
       ),
     );
   }
 
-  Widget _scaffold() => CommonScaffold(
+  Widget _scaffold(BuildContext context) => CommonScaffold(
         appTitle: "View Profile",
-        bodyData: bodyData(),
+        bodyData: bodyData(context),
         showFAB: true,
         showDrawer: true,
         floatingIcon: Icons.person_add,
@@ -164,7 +247,13 @@ class ProfileOnePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     deviceSize = MediaQuery.of(context).size;
-    return _scaffold();
+    return _scaffold(context);
+  }
+
+  @override
+  userImage(File _image) {
+    // TODO: implement userImage
+    return null;
   }
 }
 
