@@ -87,7 +87,7 @@ class InboxPage extends StatelessWidget {
                   },
                   child: CircleAvatar(
                     backgroundImage: NetworkImage(
-                        "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/teaser_large_270/public/images/car-reviews/first-drives/legacy/dsc_7121.jpg?itok=306TzjVD"),
+                        "https://cdn.pixabay.com/photo/2015/11/26/00/14/fashion-1063100_960_720.jpg"),
                   ),
                 ),
                 Expanded(
@@ -110,8 +110,7 @@ class InboxPage extends StatelessWidget {
                       Text(
                         "Online 5 min ago",
                         style: Theme.of(context).textTheme.caption.apply(
-                            fontFamily: UIData.ralewayFont,
-                            color: Colors.grey),
+                            fontFamily: UIData.ralewayFont, color: Colors.grey),
                       )
                     ],
                   ),
@@ -257,6 +256,49 @@ class InboxPage extends StatelessWidget {
     );
   }
 
+  Widget postCard2(BuildContext context) {
+    return Card(
+      elevation: 2.0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "/View Profile");
+            },
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                  "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+
+                  SizedBox(height: 10),
+                  Text(
+                    "Congratulations!!",
+                    style: Theme.of(context)
+                        .textTheme
+                        .body1
+                        .apply(fontWeightDelta: 800),
+                  ),
+                  SizedBox(height: 10),
+                  Text("Your Mercedes AMG was bought by Jack!",
+                      style: TextStyle(color: Colors.grey)),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   //allposts dropdown
   Widget bottomBar() => PreferredSize(
       preferredSize: Size(double.infinity, 50.0),
@@ -327,7 +369,12 @@ class InboxPage extends StatelessWidget {
       showFAB: true,
       showDrawer: true,
       bodyData: Column(
-        children: <Widget>[profileColumn(context),profileColumn2(context), postCard(context)],
+        children: <Widget>[
+          profileColumn(context),
+          profileColumn2(context),
+          postCard(context),
+          postCard2(context)
+        ],
       ),
     );
   }
