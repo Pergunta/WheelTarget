@@ -230,8 +230,10 @@ class CreditCardPage extends StatelessWidget {
 
 void retrievalBox(BuildContext context) {
   var alertDialog = AlertDialog(
-      title: Text("SUCCESS!"),
-      content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+    title: Text("SUCCESS!"),
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
         Text('Card is now registered!'),
         RaisedButton(
           padding: EdgeInsets.all(1.0),
@@ -245,7 +247,9 @@ void retrievalBox(BuildContext context) {
             Navigator.popUntil(context, ModalRoute.withName('/'));
           },
         )
-      ]));
+      ],
+    ),
+  );
 
   showDialog(context: context, builder: (BuildContext context) => alertDialog);
 }

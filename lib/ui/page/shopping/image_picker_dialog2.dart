@@ -6,7 +6,7 @@ class ImagePickerDialog2 extends StatelessWidget {
   AnimationController _controller;
   BuildContext context;
 
-  ImagePickerDialog2( this._controller);
+  ImagePickerDialog2(this._controller);
 
   Animation<double> _drawerContentsOpacity;
   Animation<Offset> _drawerDetailsPosition;
@@ -66,47 +66,48 @@ class ImagePickerDialog2 extends StatelessWidget {
   Widget build(BuildContext context) {
     this.context = context;
     return new Material(
-        type: MaterialType.transparency,
-        child: new Opacity(
-          opacity: 1.0,
-          child: new Container(
-            padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                new GestureDetector(
-                  onTap: () =>{},
+      type: MaterialType.transparency,
+      child: new Opacity(
+        opacity: 1.0,
+        child: new Container(
+          padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              new GestureDetector(
+                onTap: () => {_buildStatusDialog(context)},
+                child: roundedButton(
+                    "MY COLLECTION",
+                    EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                    Colors.redAccent,
+                    Colors.white),
+              ),
+              new GestureDetector(
+                onTap: () => {Navigator.pushNamed(context, "/Upload Car")},
+                child: roundedButton(
+                    "UPLOAD CAR",
+                    EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                    Colors.redAccent,
+                    Colors.white),
+              ),
+              const SizedBox(height: 15.0),
+              new GestureDetector(
+                onTap: () => dismissDialog(),
+                child: new Padding(
+                  padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: roundedButton(
-                      "MY COLLECTION",
+                      "CANCEL",
                       EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                       Colors.redAccent,
                       Colors.white),
                 ),
-                new GestureDetector(
-                  onTap: () => {Navigator.pushNamed(context, "/Upload Car")},
-                  child: roundedButton(
-                      "UPLOAD CAR",
-                      EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
-                      Colors.redAccent,
-                      Colors.white),
-                ),
-                const SizedBox(height: 15.0),
-                new GestureDetector(
-                  onTap: () => dismissDialog(),
-                  child: new Padding(
-                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                    child: roundedButton(
-                        "CANCEL",
-                        EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
-                        Colors.redAccent,
-                        Colors.white),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 
   Widget roundedButton(
@@ -134,4 +135,71 @@ class ImagePickerDialog2 extends StatelessWidget {
     );
     return loginBtn;
   }
+}
+
+void _buildStatusDialog(BuildContext context) {
+  String _selectedText = "BMW I8";
+  showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text("Choose Vehicle"),
+        content: new DropdownButton<String>(
+          hint: Text("Choose Vehicle"),
+          value: _selectedText,
+          items: <String>['BMW I8'].map(
+            (String value) {
+              return new DropdownMenuItem<String>(
+                value: value,
+                child: new Text(value),
+              );
+            },
+          ).toList(),
+          onChanged: (String val) {
+            _selectedText = val;
+          },
+        ),
+        actions: <Widget>[
+          RaisedButton(
+            padding: EdgeInsets.all(1.0),
+            shape: StadiumBorder(),
+            child: Text(
+              "PROPOSE TRADE",
+              style: TextStyle(color: Colors.white),
+            ),
+            color: Colors.redAccent,
+            onPressed: () {
+              retrievalBox(context);
+            },
+          )
+        ],
+      );
+    },
+  );
+}
+
+void retrievalBox(BuildContext context) {
+  var alertDialog = AlertDialog(
+    title: Text("SUCCESS!"),
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Text('Trade offer sent!'),
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "RETURN",
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.redAccent,
+          onPressed: () {
+            Navigator.popUntil(context, ModalRoute.withName('/View Profile'));
+          },
+        ),
+      ],
+    ),
+  );
+
+  showDialog(context: context, builder: (BuildContext context) => alertDialog);
 }

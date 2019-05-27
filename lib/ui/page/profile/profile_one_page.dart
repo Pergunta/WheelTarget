@@ -175,7 +175,7 @@ class _ProfileOnePageState extends State<ProfileOnePage>
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Post",
+                  "Vehicles for sale",
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
                 ),
               ),

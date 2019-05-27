@@ -9,8 +9,8 @@ import 'package:flutter_uikit/ui/widgets/login_background.dart';
 
 class ProductDetailPage extends StatelessWidget {
   Widget productScaffold(Stream<List<Product>> products) => new Scaffold(
-      backgroundColor: new Color(0xffeeeeee),
-      body: StreamBuilder<List<Product>>(
+        backgroundColor: new Color(0xffeeeeee),
+        body: StreamBuilder<List<Product>>(
           stream: products,
           builder: (context, snapshot) {
             return snapshot.hasData
@@ -20,16 +20,19 @@ class ProductDetailPage extends StatelessWidget {
                       LoginBackground(
                         showIcon: false,
                       ),
-                      ProductDetailWidgets(product:snapshot.data[1]),
+                      ProductDetailWidgets(product: snapshot.data[1]),
                     ],
                   )
-                : Center(child: CircularProgressIndicator());
-          }));
+                : Center(child: CircularProgressIndicator(),);
+          },
+        ),
+      );
   @override
   Widget build(BuildContext context) {
     ProductBloc productBloc = ProductBloc();
     return ProductProvider(
-        productBloc: productBloc,
-        child: productScaffold(productBloc.productItems));
+      productBloc: productBloc,
+      child: productScaffold(productBloc.productItems),
+    );
   }
 }

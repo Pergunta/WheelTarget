@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uikit/logic/bloc/menu_bloc.dart';
 import 'package:flutter_uikit/model/menu.dart';
 import 'package:flutter_uikit/ui/widgets/about_tile.dart';
+import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
@@ -111,11 +112,12 @@ class HomePage extends StatelessWidget {
         }, childCount: menu.length),
       );
 
-  Widget homeScaffold(BuildContext context) => Theme(
-        data: Theme.of(context).copyWith(
-          canvasColor: Colors.transparent,
-        ),
-        child: Scaffold(key: _scaffoldState, body: bodySliverList()),
+  Widget homeScaffold(BuildContext context) => CommonScaffold(
+        appTitle: "View Profile",
+        bodyData: bodySliverList(),
+        showFAB: true,
+        showDrawer: true,
+        floatingIcon: Icons.person_add,
       );
 
   Widget bodySliverList() {

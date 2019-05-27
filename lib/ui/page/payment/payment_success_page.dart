@@ -44,32 +44,32 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
 
   goToDialog() {
     showDialog(
-        context: context,
-        barrierDismissible: true,
-        builder: (context) => Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    successTicket(),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    RaisedButton(
-                      shape: StadiumBorder(),
-                      color: Colors.redAccent,
-                      child: Text(
-                        'Continue Shopping',
-                        style: TextStyle(color: Colors.white, fontSize: 20)
-                      ),
-                      onPressed: () {
-                        Navigator.popUntil(context, ModalRoute.withName('/Shopping List'));
-                      },
-                    )
-                  ],
-                ),
+      context: context,
+      barrierDismissible: true,
+      builder: (context) => Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  successTicket(),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  RaisedButton(
+                    shape: StadiumBorder(),
+                    color: Colors.redAccent,
+                    child: Text('Continue Shopping',
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    onPressed: () {
+                      Navigator.popUntil(
+                          context, ModalRoute.withName('/Shopping List'));
+                    },
+                  )
+                ],
               ),
-            ));
+            ),
+          ),
+    );
   }
 
   successTicket() => Container(

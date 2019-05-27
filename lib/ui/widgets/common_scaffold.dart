@@ -80,9 +80,7 @@ class CommonScaffold extends StatelessWidget {
 }
 
 class DataSearch extends SearchDelegate<String> {
-  final search = ["fiat 500", "jack"];
-
-  final path = ["/Shopping Details", "/View Profile"];
+  final search = ["fiat 500", "jack", "hyundai review"];
 
   final recentSearch = ["fiat 500", "jack"];
 
@@ -124,8 +122,16 @@ class DataSearch extends SearchDelegate<String> {
       itemCount: suggestionList.length,
       itemBuilder: (context, index) => ListTile(
             onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, path[index]);
+              if (suggestionList[index] == "fiat 500") {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/Shopping Details");
+              } else if (suggestionList[index] == "jack") {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/View Profile");
+              } else {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/Feed");
+              }
             },
             leading: Icon(Icons.arrow_right),
             title: RichText(
