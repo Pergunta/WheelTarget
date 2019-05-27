@@ -75,7 +75,7 @@ class ProfileTwoPage extends StatelessWidget {
         ),
       );
 
-  Widget profileColumn() => Padding(
+  Widget profileColumn(BuildContext context) => Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -122,7 +122,7 @@ class ProfileTwoPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
                 ),
               ),
-              profileColumn(),
+              profileColumn(context),
               Expanded(
                 child: GestureDetector(
                   onTap:() {Navigator.pushNamed(context, "/Product Details");},
@@ -169,6 +169,7 @@ class ProfileTwoPage extends StatelessWidget {
             followColumn(deviceSize),
             imagesCard(),
             postCard(context),
+            profileColumn(context),
           ],
         ),
       );

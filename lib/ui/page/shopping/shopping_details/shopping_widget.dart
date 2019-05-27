@@ -17,7 +17,6 @@ class ShoppingWidgets extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              
               children: <Widget>[
                 Text(
                   product.brand,
@@ -25,24 +24,30 @@ class ShoppingWidgets extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        product.name,
-                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15.0),
+                  children: <Widget>[
+                    Text(
+                      product.name,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700, fontSize: 15.0),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, "/View Profile");
+                      },
+                      child: CircleAvatar(
+                        radius: 30.0,
+                        backgroundImage: NetworkImage(
+                            "http://clipart-library.com/images/kTKozG4Mc.jpg"),
                       ),
-                      SizedBox(
-                        height: 10.0,
-                      ),                
-                      RaisedButton(
-                        shape: StadiumBorder(), 
-                        color: Colors.redAccent,                     
-                        onPressed: () {
-                          Navigator.pushNamed(context, "/Payment Success");
-                        },
-                        child: Text(
-                          'Buy Now',
-                          style: TextStyle(color: Colors.white ,fontSize: 20)
-                      ),
+                    ),
+                    RaisedButton(
+                      shape: StadiumBorder(),
+                      color: Colors.redAccent,
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/Payment Success");
+                      },
+                      child: Text('Buy Now',
+                          style: TextStyle(color: Colors.white, fontSize: 20)),
                     ),
                   ],
                 ),

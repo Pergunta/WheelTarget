@@ -8,22 +8,10 @@ import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProfileOnePage extends StatefulWidget {
-  ProfileOnePage({Key key, this.title}) : super(key: key);
-  final String title;
-  @override
-  _ProfileOnePageState createState() => new _ProfileOnePageState();
-}
-
-class _ProfileOnePageState extends State<ProfileOnePage>
-    with TickerProviderStateMixin, ImagePickerListener {
-  AnimationController _controller;
-  ImagePickerHandler2 imagePicker;
-
-  DateTime date2;
 
   var deviceSize;
   //Column1
-  Widget profileColumn() => Container(
+  Widget profileColumn(BuildContext context) => Container(
         height: deviceSize.height * 0.24,
         child: Padding(
           padding: const EdgeInsets.all(2.0),
@@ -42,7 +30,13 @@ class _ProfileOnePageState extends State<ProfileOnePage>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      SizedBox(width: 50),
+                      IconButton(
+                        icon: Icon(Icons.message),
+                        color: Colors.white,
+                        iconSize: 30,
+                        onPressed: () =>{ Navigator.pushNamed(
+                                         context, "/chat page")},
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius:
@@ -76,17 +70,6 @@ class _ProfileOnePageState extends State<ProfileOnePage>
 
   //column2
 
-  @override
-  void initState() {
-    super.initState();
-    _controller = new AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 500),
-    );
-
-    imagePicker = new ImagePickerHandler2(this, _controller);
-    imagePicker.init();
-  }
 
   //column3
   Widget descColumn() => Container(
@@ -222,7 +205,7 @@ class _ProfileOnePageState extends State<ProfileOnePage>
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          profileColumn(),
+          profileColumn(context),
           CommonDivider(),
           followColumn(deviceSize),
           CommonDivider(),
@@ -230,7 +213,7 @@ class _ProfileOnePageState extends State<ProfileOnePage>
           CommonDivider(),
           accountColumn(),
           CommonDivider(),
-          postCard(context)
+       
         ],
       ),
     );
@@ -248,12 +231,6 @@ class _ProfileOnePageState extends State<ProfileOnePage>
   Widget build(BuildContext context) {
     deviceSize = MediaQuery.of(context).size;
     return _scaffold(context);
-  }
-
-  @override
-  userImage(File _image) {
-    // TODO: implement userImage
-    return null;
   }
 }
 
