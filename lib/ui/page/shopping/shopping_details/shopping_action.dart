@@ -38,22 +38,6 @@ class ShoppingActionState extends State<ShoppingAction> {
             Row(
               children: <Widget>[
                 Text(
-                  "Username: ",
-                  style: TextStyle(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.redAccent),
-                ),
-                Text(
-                  "Unregistered User",
-                  style:
-                      TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Text(
                   "Phone Number: ",
                   style: TextStyle(
                       fontSize: 15.0,

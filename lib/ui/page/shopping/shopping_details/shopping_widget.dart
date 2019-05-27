@@ -30,16 +30,6 @@ class ShoppingWidgets extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.w700, fontSize: 15.0),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, "/View Profile");
-                      },
-                      child: CircleAvatar(
-                        radius: 30.0,
-                        backgroundImage: NetworkImage(
-                            "http://clipart-library.com/images/kTKozG4Mc.jpg"),
-                      ),
-                    ),
                     RaisedButton(
                       shape: StadiumBorder(),
                       color: Colors.redAccent,
@@ -57,7 +47,16 @@ class ShoppingWidgets extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    SizedBox(width: 100),
+                                        GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, "/View Profile");
+                      },
+                      child: CircleAvatar(
+                        radius: 30.0,
+                        backgroundImage: NetworkImage(
+                            "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
+                      ),
+                    ),
                     Text(
                       product.price,
                       style: TextStyle(
@@ -141,7 +140,6 @@ class ShoppingWidgets extends StatelessWidget {
           mainCard(),
           imagesCard(),
           descCard(),
-          actionCard(),
         ],
       ),
     );
