@@ -109,7 +109,26 @@ class DataSearch extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    return null;
+    return AlertDialog(
+      title: Text("OOPS!"),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text('No Results Found!'),
+          RaisedButton(
+            padding: EdgeInsets.all(1.0),
+            shape: StadiumBorder(),
+            child: Text(
+              "Go Back",
+              style: TextStyle(color: Colors.white),
+            ),
+            color: Colors.redAccent,
+            onPressed: () {Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+    );
   }
 
   @override
