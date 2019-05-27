@@ -48,8 +48,7 @@ class CommonScaffold extends StatelessWidget {
             ],
           ),
         ),
-);
-
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +65,7 @@ class CommonScaffold extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              showSearch(context: context , delegate: DataSearch());
+              showSearch(context: context, delegate: DataSearch());
             },
             icon: Icon(actionFirstIcon),
           )
@@ -74,75 +73,73 @@ class CommonScaffold extends StatelessWidget {
       ),
       drawer: showDrawer ? CommonDrawer() : null,
       body: bodyData,
-     
+
       //bottomNavigationBar: showBottomNav ? myBottomBar() : null,
     );
   }
 }
 
-class DataSearch extends SearchDelegate<String>{
-  final search = [
-    "fiat 500",
-    "jack"
-  ];
+class DataSearch extends SearchDelegate<String> {
+  final search = ["fiat 500", "jack"];
 
-    final recentSearch = [
-    "fiat 500",
-    "jack"
-  ];
+  final path = ["/Shopping Details", "/View Profile"];
+
+  final recentSearch = ["fiat 500", "jack"];
 
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.clear),
-        onPressed: () {
-          query = "";
-        })];
+          icon: Icon(Icons.clear),
+          onPressed: () {
+            query = "";
+          })
+    ];
   }
 
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: AnimatedIcon(
-      icon: AnimatedIcons.menu_arrow,
-      progress: transitionAnimation,
-      ),
-      onPressed: () {
-        close(context, null);
-      });
+        icon: AnimatedIcon(
+          icon: AnimatedIcons.menu_arrow,
+          progress: transitionAnimation,
+        ),
+        onPressed: () {
+          close(context, null);
+        });
   }
 
   @override
   Widget buildResults(BuildContext context) {
-  return null;
-      
+    return null;
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    final suggestionList = query.isEmpty 
-                            ? recentSearch 
-                            : search.where((p)=> p.startsWith(query)).toList();
+    final suggestionList = query.isEmpty
+        ? recentSearch
+        : search.where((p) => p.startsWith(query)).toList();
 
-    return ListView.builder(itemCount:suggestionList.length, itemBuilder: (context,index)=>ListTile(
-      onTap: (){
-        Navigator.pop(context);
-        Navigator.pushNamed(context, "/Shopping Details");
-      },
-      leading: Icon(Icons.arrow_right),
-      title: RichText(
-      text: TextSpan(
-        text: suggestionList[index].substring(0, query.length),
-        style:
-          TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        children: [
-          TextSpan(
-            text: suggestionList[index].substring(query.length),
-            style: TextStyle(color: Colors.grey))
-        ]
-      ),
-    ),
-  ),
-);
-  }}
+    return ListView.builder(
+      itemCount: suggestionList.length,
+      itemBuilder: (context, index) => ListTile(
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, path[index]);
+            },
+            leading: Icon(Icons.arrow_right),
+            title: RichText(
+              text: TextSpan(
+                  text: suggestionList[index].substring(0, query.length),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                  children: [
+                    TextSpan(
+                        text: suggestionList[index].substring(query.length),
+                        style: TextStyle(color: Colors.grey))
+                  ]),
+            ),
+          ),
+    );
+  }
+}

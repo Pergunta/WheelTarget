@@ -1,12 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_uikit/ui/page/shopping/image_picker_handler2.dart';
 import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProfileOnePage extends StatelessWidget {
-  var deviceSize;
+class ProfileOnePage extends StatefulWidget {
 
+  var deviceSize;
   //Column1
   Widget profileColumn(BuildContext context) => Container(
         height: deviceSize.height * 0.24,
@@ -66,6 +69,7 @@ class ProfileOnePage extends StatelessWidget {
       );
 
   //column2
+
 
   //column3
   Widget descColumn() => Container(
@@ -153,7 +157,9 @@ class ProfileOnePage extends StatelessWidget {
           CommonDivider(),
           descColumn(),
           CommonDivider(),
-          accountColumn()
+          accountColumn(),
+          CommonDivider(),
+       
         ],
       ),
     );

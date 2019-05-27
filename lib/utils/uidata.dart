@@ -17,6 +17,7 @@ class UIData {
   static const String shoppingThreeRoute = "/Product Details";
   static const String shoppingBuySell = "/Buy Sell";
   static const String shoppingSell = "/Shopping Sell";
+  static const String uploadCar = "/Upload Car";
   static const String paymentOneRoute = "/Credit Card";
   static const String paymentTwoRoute = "/Payment Success";
   static const String loginOneRoute = "/Login With OTP";

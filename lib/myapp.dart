@@ -17,6 +17,7 @@ import 'package:flutter_uikit/ui/page/shopping/shopping_details_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_one_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_buy_sell.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_sell.dart';
+import 'package:flutter_uikit/ui/page/shopping/upload_car.dart';
 import 'package:flutter_uikit/ui/page/timeline/timeline_one_page.dart';
 import 'package:flutter_uikit/ui/page/timeline/timeline_two_page.dart';
 import 'package:flutter_uikit/ui/page/notifications/chatmessage.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         UIData.homeRoute: (BuildContext context) => HomePage(),
         UIData.profileOneRoute: (BuildContext context) => ProfileOnePage(),
+        UIData.uploadCar: (BuildContext context) => UploadCar(),
         UIData.profileTwoRoute: (BuildContext context) => ProfileTwoPage(),
         UIData.timelineOneRoute: (BuildContext context) => TimelineOnePage(),
         UIData.timelineTwoRoute: (BuildContext context) => TimelineTwoPage(),
