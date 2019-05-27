@@ -12,7 +12,7 @@ class ProductDesc extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(1.0),
             child: new ListTile(
               title: new Text(
                 product.name,
@@ -28,7 +28,7 @@ class ProductDesc extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.normal),
               ),
-              trailing: new Text(product.price + "euros",
+              trailing: new Text(product.price + "£",
                   style: new TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
@@ -68,66 +68,108 @@ class ProductDesc extends StatelessWidget {
           new SizedBox(
             height: 30.0,
           ),
-          new Card(
-            clipBehavior: Clip.antiAlias,
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(8.0)),
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  new Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      new Text(
-                        "Doors",
-                        style: TextStyle(fontWeight: FontWeight.w700),
-                      ),
-                      new RawChip(
-                          label: new Text(
-                            "3",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          backgroundColor: Colors.cyan)
-                    ],
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              MaterialButton(
+                  color: Colors.white,
+                  shape: StadiumBorder(),
+                  highlightColor: Colors.redAccent[80],
+                  //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 20.0),
+                    child: Text(
+                      "EDIT VEHICLE",
+                      style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 15.0,
+                          fontFamily: "WorkSansBold"),
+                    ),
                   ),
-                  new Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      new Text("Color",
-                          style: TextStyle(fontWeight: FontWeight.w700)),
-                      new RawChip(
-                        label: new Text(
-                          "White",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        backgroundColor: Colors.red,
-                      )
-                    ],
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/Edit Vehicle");
+                  }),
+              MaterialButton(
+                  color: Colors.red,
+                  shape: StadiumBorder(),
+                  highlightColor: Colors.redAccent[80],
+                  //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 20.0),
+                    child: Text(
+                      "REMOVE VEHICLE",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontFamily: "WorkSansBold"),
+                    ),
                   ),
-                  new Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      new Text("Product ID",
-                          style: TextStyle(fontWeight: FontWeight.w700)),
-                      new RawChip(
-                        label: new Text(
-                          "PQ1001",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        backgroundColor: Colors.green,
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-          )
+                  onPressed: () {
+                    confirmationBox(context);
+                  }),
+            ],
+          ),
         ],
       ),
     );
   }
+}
+
+void confirmationBox(BuildContext context) {
+  var alertDialog = AlertDialog(
+      title: Text("CONFIRMATION!"),
+      content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        Text('Permanently remove vehicle'),
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "REMOVE",
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.red,
+          onPressed: () {
+            retrievalBox(context);
+          },
+        ),
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "CANCEL",
+            style: TextStyle(color: Colors.redAccent),
+          ),
+          color: Colors.white,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        )
+      ]));
+
+  showDialog(context: context, builder: (BuildContext context) => alertDialog);
+}
+
+void retrievalBox(BuildContext context) {
+  var alertDialog = AlertDialog(
+      title: Text("SUCCESS!"),
+      content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        Text('Vehicle removed'),
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "RETURN",
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.redAccent,
+          onPressed: () {
+            Navigator.popUntil(context, ModalRoute.withName('/My Profile'));
+          },
+        )
+      ]));
+
+  showDialog(context: context, builder: (BuildContext context) => alertDialog);
 }

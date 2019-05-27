@@ -9,9 +9,11 @@ import 'package:flutter_uikit/ui/page/login/login_three_page.dart';
 import 'package:flutter_uikit/ui/page/notfound/notfound_page.dart';
 import 'package:flutter_uikit/ui/page/payment/credit_card_page.dart';
 import 'package:flutter_uikit/ui/page/payment/payment_success_page.dart';
+import 'package:flutter_uikit/ui/page/profile/edit_profile.dart';
 import 'package:flutter_uikit/ui/page/profile/profile_one_page.dart';
 import 'package:flutter_uikit/ui/page/profile/profile_two_page.dart';
 import 'package:flutter_uikit/ui/page/settings/settings_one_page.dart';
+import 'package:flutter_uikit/ui/page/shopping/edit_vehicle.dart';
 import 'package:flutter_uikit/ui/page/shopping/product_detail_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_details_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_one_page.dart';
@@ -53,13 +55,17 @@ class MyApp extends StatelessWidget {
         UIData.profileOneRoute: (BuildContext context) => ProfileOnePage(),
         UIData.uploadCar: (BuildContext context) => UploadCar(),
         UIData.profileTwoRoute: (BuildContext context) => ProfileTwoPage(),
+        UIData.editProfileRoute: (BuildContext context) => EditProfile(),
+        UIData.editVehicleRoute: (BuildContext context) => EditVehicle(),
         UIData.timelineOneRoute: (BuildContext context) => TimelineOnePage(),
         UIData.timelineTwoRoute: (BuildContext context) => TimelineTwoPage(),
         UIData.notFoundRoute: (BuildContext context) => NotFoundPage(),
         UIData.settingsOneRoute: (BuildContext context) => SettingsOnePage(),
         UIData.shoppingOneRoute: (BuildContext context) => ShoppingOnePage(),
-        UIData.shoppingTwoRoute: (BuildContext context) => ShoppingDetailsPage(),
-        UIData.shoppingThreeRoute: (BuildContext context) => ProductDetailPage(),
+        UIData.shoppingTwoRoute: (BuildContext context) =>
+            ShoppingDetailsPage(),
+        UIData.shoppingThreeRoute: (BuildContext context) =>
+            ProductDetailPage(),
         UIData.chatPageRoute: (BuildContext context) => ChatPage(),
         UIData.shoppingBuySell: (BuildContext context) => ShoppingBuySell(),
         UIData.shoppingSell: (BuildContext context) => ShoppingSell(),

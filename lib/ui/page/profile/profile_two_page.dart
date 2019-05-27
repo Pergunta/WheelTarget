@@ -118,14 +118,15 @@ class ProfileTwoPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Post",
+                  "Vehicles for sale",
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
                 ),
               ),
-              profileColumn(context),
               Expanded(
                 child: GestureDetector(
-                  onTap:() {Navigator.pushNamed(context, "/Product Details");},
+                  onTap: () {
+                    Navigator.pushNamed(context, "/Product Details");
+                  },
                   child: Image.network(
                     "https://images.autouncle.com/pt/car_images/medium_5b2da5b6-19aa-4d0c-ac93-6fa1c37380cc_bmw-i8-edrive-365cv.jpg",
                     fit: BoxFit.cover,
@@ -166,10 +167,27 @@ class ProfileTwoPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             profileHeader(),
+            MaterialButton(
+                color: Colors.white,
+                shape: StadiumBorder(),
+                highlightColor: Colors.redAccent[80],
+                //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 42.0),
+                  child: Text(
+                    "EDIT PROFILE",
+                    style: TextStyle(
+                        color: Colors.redAccent,
+                        fontSize: 25.0,
+                        fontFamily: "WorkSansBold"),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, "/Edit Profile");
+                }),
             followColumn(deviceSize),
-            imagesCard(),
             postCard(context),
-            profileColumn(context),
           ],
         ),
       );

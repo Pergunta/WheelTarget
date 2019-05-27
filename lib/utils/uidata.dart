@@ -2,12 +2,14 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-  
+
 class UIData {
   //routes
   static const String homeRoute = "/home";
   static const String profileOneRoute = "/View Profile";
   static const String profileTwoRoute = "/My Profile";
+  static const String editProfileRoute = "/Edit Profile";
+  static const String editVehicleRoute = "/Edit Vehicle";
   static const String notFoundRoute = "/No Search Result";
   static const String timelineOneRoute = "/Feed";
   static const String timelineTwoRoute = "/Tweets";
@@ -26,7 +28,6 @@ class UIData {
   static const String dashboardOneRoute = "/Dashboard 1";
   static const String dashboardTwoRoute = "/Dashboard 2";
   static const String chatPageRoute = "/chat page";
-
 
   //strings
   static const String appName = "Wheel Target";
