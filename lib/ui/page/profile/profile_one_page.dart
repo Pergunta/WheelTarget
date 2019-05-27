@@ -8,10 +8,22 @@ import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProfileOnePage extends StatefulWidget {
+  ProfileOnePage({Key key, this.title}) : super(key: key);
+  final String title;
+  @override
+  _ProfileOnePageState createState() => new _ProfileOnePageState();
+}
+
+class _ProfileOnePageState extends State<ProfileOnePage>
+    with TickerProviderStateMixin, ImagePickerListener {
+  AnimationController _controller;
+  ImagePickerHandler2 imagePicker;
+
+  DateTime date2;
 
   var deviceSize;
   //Column1
-  Widget profileColumn(BuildContext context) => Container(
+  Widget profileColumn() => Container(
         height: deviceSize.height * 0.24,
         child: Padding(
           padding: const EdgeInsets.all(2.0),
@@ -30,13 +42,7 @@ class ProfileOnePage extends StatefulWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      IconButton(
-                        icon: Icon(Icons.message),
-                        color: Colors.white,
-                        iconSize: 30,
-                        onPressed: () =>{ Navigator.pushNamed(
-                                         context, "/chat page")},
-                      ),
+                      SizedBox(width: 50),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius:
@@ -70,6 +76,17 @@ class ProfileOnePage extends StatefulWidget {
 
   //column2
 
+  @override
+  void initState() {
+    super.initState();
+    _controller = new AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    imagePicker = new ImagePickerHandler2(this, _controller);
+    imagePicker.init();
+  }
 
   //column3
   Widget descColumn() => Container(
@@ -205,7 +222,7 @@ class ProfileOnePage extends StatefulWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          profileColumn(context),
+          profileColumn(),
           CommonDivider(),
           followColumn(deviceSize),
           CommonDivider(),
@@ -213,7 +230,7 @@ class ProfileOnePage extends StatefulWidget {
           CommonDivider(),
           accountColumn(),
           CommonDivider(),
-       
+          postCard(context)
         ],
       ),
     );
@@ -231,6 +248,12 @@ class ProfileOnePage extends StatefulWidget {
   Widget build(BuildContext context) {
     deviceSize = MediaQuery.of(context).size;
     return _scaffold(context);
+  }
+
+  @override
+  userImage(File _image) {
+    // TODO: implement userImage
+    return null;
   }
 }
 
@@ -257,4 +280,4 @@ Widget followColumn(Size deviceSize) => Container(
           )
         ],
       ),
-    );
+);
