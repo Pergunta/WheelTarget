@@ -24,6 +24,8 @@ class UIData {
   static const String loginThreeRoute = "/Login 3";
   static const String dashboardOneRoute = "/Dashboard 1";
   static const String dashboardTwoRoute = "/Dashboard 2";
+  static const String chatPageRoute = "/chat page";
+
 
   //strings
   static const String appName = "Wheel Target";

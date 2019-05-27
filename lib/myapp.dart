@@ -19,6 +19,9 @@ import 'package:flutter_uikit/ui/page/shopping/shopping_buy_sell.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_sell.dart';
 import 'package:flutter_uikit/ui/page/timeline/timeline_one_page.dart';
 import 'package:flutter_uikit/ui/page/timeline/timeline_two_page.dart';
+import 'package:flutter_uikit/ui/page/notifications/chatmessage.dart';
+import 'package:flutter_uikit/ui/page/notifications/chatscreen.dart';
+import 'package:flutter_uikit/ui/page/notifications/chatpage.dart';
 import 'package:flutter_uikit/utils/translations.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -55,6 +58,7 @@ class MyApp extends StatelessWidget {
         UIData.shoppingOneRoute: (BuildContext context) => ShoppingOnePage(),
         UIData.shoppingTwoRoute: (BuildContext context) => ShoppingDetailsPage(),
         UIData.shoppingThreeRoute: (BuildContext context) => ProductDetailPage(),
+        UIData.chatPageRoute: (BuildContext context) => ChatPage(),
         UIData.shoppingBuySell: (BuildContext context) => ShoppingBuySell(),
         UIData.shoppingSell: (BuildContext context) => ShoppingSell(),
         UIData.loginOneRoute: (BuildContext context) => LoginPage(),

@@ -8,7 +8,7 @@ class ProfileOnePage extends StatelessWidget {
   var deviceSize;
 
   //Column1
-  Widget profileColumn() => Container(
+  Widget profileColumn(BuildContext context) => Container(
         height: deviceSize.height * 0.24,
         child: Padding(
           padding: const EdgeInsets.all(2.0),
@@ -27,7 +27,13 @@ class ProfileOnePage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      SizedBox(width: 50),
+                      IconButton(
+                        icon: Icon(Icons.message),
+                        color: Colors.white,
+                        iconSize: 30,
+                        onPressed: () =>{ Navigator.pushNamed(
+                                         context, "/chat page")},
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius:
@@ -137,11 +143,11 @@ class ProfileOnePage extends StatelessWidget {
         ),
       );
 
-  Widget bodyData() {
+  Widget bodyData(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          profileColumn(),
+          profileColumn(context),
           CommonDivider(),
           followColumn(deviceSize),
           CommonDivider(),
@@ -153,9 +159,9 @@ class ProfileOnePage extends StatelessWidget {
     );
   }
 
-  Widget _scaffold() => CommonScaffold(
+  Widget _scaffold(BuildContext context) => CommonScaffold(
         appTitle: "View Profile",
-        bodyData: bodyData(),
+        bodyData: bodyData(context),
         showFAB: true,
         showDrawer: true,
         floatingIcon: Icons.person_add,
@@ -164,7 +170,7 @@ class ProfileOnePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     deviceSize = MediaQuery.of(context).size;
-    return _scaffold();
+    return _scaffold(context);
   }
 }
 
