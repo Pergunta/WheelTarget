@@ -9,7 +9,7 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Flutter Chat"),
+        title: new Text("Jack"),
       ),
       body: new ChatScreen()
     ); 

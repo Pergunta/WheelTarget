@@ -14,8 +14,9 @@ class HomePage extends StatelessWidget {
   BuildContext _context;
   //menuStack
   Widget menuStack(BuildContext context, Menu menu) => InkWell(
-        onTap: (){ Navigator.pushNamed(
-                  context, "/${menu.items[0]}");},
+        onTap: () {
+          Navigator.pushNamed(context, "/${menu.items[0]}");
+        },
         splashColor: Colors.orange,
         child: Card(
           clipBehavior: Clip.antiAlias,
@@ -66,10 +67,10 @@ class HomePage extends StatelessWidget {
       );
 
   //appbar
-  Widget appBar() => SliverAppBar(
+  Widget appBar(BuildContext context) => SliverAppBar(
         backgroundColor: Colors.black26,
         pinned: true,
-        elevation: 10.0,
+        elevation: 1.0,
         forceElevated: true,
         expandedHeight: 150.0,
         flexibleSpace: FlexibleSpaceBar(
@@ -80,17 +81,13 @@ class HomePage extends StatelessWidget {
           ),
           title: Row(
             children: <Widget>[
-              
-              new Image(
-                image: new AssetImage("assets/images/logo1.png"),
-                width: 50,
-                height: 50,
-              
+              Text(UIData.appName),
+              IconButton(
+                onPressed: () {
+                  showSearch(context: context, delegate: DataSearch());
+                },
+                icon: Icon(Icons.search, color: Colors.white, size: 20),
               ),
-              SizedBox(
-                width: 10.0,
-              ),
-              Text(UIData.appName)
             ],
           ),
         ),
@@ -112,15 +109,14 @@ class HomePage extends StatelessWidget {
         }, childCount: menu.length),
       );
 
-  Widget homeScaffold(BuildContext context) => CommonScaffold(
-        appTitle: "View Profile",
-        bodyData: bodySliverList(),
-        showFAB: true,
-        showDrawer: true,
-        floatingIcon: Icons.person_add,
+  Widget homeScaffold(BuildContext context) => Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Colors.transparent,
+        ),
+        child: Scaffold(key: _scaffoldState, body: bodySliverList(context)),
       );
 
-  Widget bodySliverList() {
+  Widget bodySliverList(BuildContext context) {
     MenuBloc menuBloc = MenuBloc();
     return StreamBuilder<List<Menu>>(
         stream: menuBloc.menuItems,
@@ -128,7 +124,7 @@ class HomePage extends StatelessWidget {
           return snapshot.hasData
               ? CustomScrollView(
                   slivers: <Widget>[
-                    appBar(),
+                    appBar(context),
                     bodyGrid(snapshot.data),
                   ],
                 )
@@ -346,5 +342,76 @@ class HomePage extends StatelessWidget {
     return defaultTargetPlatform == TargetPlatform.iOS
         ? homeIOS(context)
         : homeScaffold(context);
+  }
+}
+
+class DataSearch extends SearchDelegate<String> {
+  final search = ["fiat 500", "jack", "hyundai review"];
+
+  final recentSearch = ["fiat 500", "jack"];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+          icon: Icon(Icons.clear),
+          onPressed: () {
+            query = "";
+          })
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+        icon: AnimatedIcon(
+          icon: AnimatedIcons.menu_arrow,
+          progress: transitionAnimation,
+        ),
+        onPressed: () {
+          close(context, null);
+        });
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return null;
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final suggestionList = query.isEmpty
+        ? recentSearch
+        : search.where((p) => p.startsWith(query)).toList();
+
+    return ListView.builder(
+      itemCount: suggestionList.length,
+      itemBuilder: (context, index) => ListTile(
+            onTap: () {
+              if (suggestionList[index] == "fiat 500") {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/Shopping Details");
+              } else if (suggestionList[index] == "jack") {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/View Profile");
+              } else {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/Feed");
+              }
+            },
+            leading: Icon(Icons.arrow_right),
+            title: RichText(
+              text: TextSpan(
+                  text: suggestionList[index].substring(0, query.length),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                  children: [
+                    TextSpan(
+                        text: suggestionList[index].substring(query.length),
+                        style: TextStyle(color: Colors.grey))
+                  ]),
+            ),
+          ),
+    );
   }
 }

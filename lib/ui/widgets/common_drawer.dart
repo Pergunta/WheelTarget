@@ -16,11 +16,18 @@ class CommonDrawer extends StatelessWidget {
             accountEmail: Text(
               "chrispaul_123@gmail.com",
             ),
-            currentAccountPicture: new CircleAvatar(
-              backgroundImage: new AssetImage(UIData.pkImage),
-            ),
+            currentAccountPicture: new Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        border: Border.all(width: 2.0, color: Colors.white)),
+                    child: CircleAvatar(
+                      radius: 30.0,
+                      backgroundImage: NetworkImage(
+                          "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2779.png"),
+                    ),
+                  ),
           ),
-            new ListTile(
+          new ListTile(
             title: Text(
               "Home",
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
@@ -29,7 +36,7 @@ class CommonDrawer extends StatelessWidget {
               Icons.home,
               color: Colors.grey,
             ),
-            onTap: (){
+            onTap: () {
               Navigator.popUntil(context, ModalRoute.withName('/'));
             },
           ),
@@ -42,10 +49,10 @@ class CommonDrawer extends StatelessWidget {
               Icons.person,
               color: Colors.blue,
             ),
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(
-              context, "/My Profile");},
+              Navigator.pushNamed(context, "/My Profile");
+            },
           ),
           new ListTile(
             title: Text(
@@ -56,10 +63,10 @@ class CommonDrawer extends StatelessWidget {
               Icons.shopping_cart,
               color: Colors.green,
             ),
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(
-              context, "/Buy Sell");},
+              Navigator.pushNamed(context, "/Buy Sell");
+            },
           ),
           new ListTile(
             title: Text(
@@ -70,11 +77,11 @@ class CommonDrawer extends StatelessWidget {
               Icons.list,
               color: Colors.cyan,
             ),
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(
-              context, "/Feed");},
-              ),
+              Navigator.pushNamed(context, "/Feed");
+            },
+          ),
           Divider(),
           new ListTile(
             title: Text(
@@ -85,10 +92,10 @@ class CommonDrawer extends StatelessWidget {
               Icons.arrow_forward_ios,
               color: Colors.blue,
             ),
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(
-              context, "/Login 2");},
+              Navigator.pushNamed(context, "/Login 2");
+            },
           ),
           Divider(),
           SizedBox(
