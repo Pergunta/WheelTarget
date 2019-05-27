@@ -1,13 +1,13 @@
 # WheelTarget
 
 Mobile app developed in Flutter.\
-Can be used on Android and iOS.
+Developed for Android and iOS.
 
 
 # Requirements 
 
 flutter  -- https://flutter.dev/docs/get-started/install/windows\
-to check if its installed run flutter doctor.
+to check if it's installed run flutter doctor.
 
 
 # RUN COMMAND
