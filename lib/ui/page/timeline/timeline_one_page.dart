@@ -174,7 +174,7 @@ class TimelineOnePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-        appTitle: "Forum",
+        appTitle: "News Feed",
         showFAB: true,
         showDrawer: true,
         bodyData: bodySliverList(),

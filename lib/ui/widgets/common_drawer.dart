@@ -17,15 +17,15 @@ class CommonDrawer extends StatelessWidget {
               "chrispaul_123@gmail.com",
             ),
             currentAccountPicture: new Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50.0),
-                        border: Border.all(width: 2.0, color: Colors.white)),
-                    child: CircleAvatar(
-                      radius: 30.0,
-                      backgroundImage: NetworkImage(
-                          "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2779.png"),
-                    ),
-                  ),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50.0),
+                  border: Border.all(width: 2.0, color: Colors.white)),
+              child: CircleAvatar(
+                radius: 30.0,
+                backgroundImage: NetworkImage(
+                    "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2779.png"),
+              ),
+            ),
           ),
           new ListTile(
             title: Text(
@@ -80,6 +80,20 @@ class CommonDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, "/Feed");
+            },
+          ),
+          new ListTile(
+            title: Text(
+              "Inbox",
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
+            ),
+            leading: Icon(
+              Icons.mail,
+              color: Colors.orangeAccent,
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, "/Inbox");
             },
           ),
           Divider(),

@@ -12,6 +12,7 @@ class UIData {
   static const String editVehicleRoute = "/Edit Vehicle";
   static const String notFoundRoute = "/No Search Result";
   static const String timelineOneRoute = "/Feed";
+  static const String inboxPageRoute = "/Inbox";
   static const String timelineTwoRoute = "/Tweets";
   static const String settingsOneRoute = "/Device Settings";
   static const String shoppingOneRoute = "/Shopping List";
@@ -46,7 +47,8 @@ class UIData {
   static const String blankImage = "$imageDir/blank.jpg";
   static const String dashboardImage = "$imageDir/dashboard.jpg";
   static const String loginImage = "$imageDir/login.jpg";
-  static const String paymentImage = "$imageDir/payment.jpg";
+  static const String paymentImage = "$imageDir/credit.png";
+  static const String messageImage = "$imageDir/message.png";
   static const String settingsImage = "$imageDir/setting.jpeg";
   static const String shoppingImage = "$imageDir/shopping.jpg";
   static const String helpImage = "$imageDir/help1.png";
