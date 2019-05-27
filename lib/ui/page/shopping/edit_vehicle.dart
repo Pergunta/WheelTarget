@@ -206,7 +206,7 @@ class _EditVehicleState extends State<EditVehicle>
                           retrievalBox(context);
                         }),
                   ),
-                  SizedBox(height: 200)
+                  SizedBox(height: 300)
                 ],
               ),
             ],

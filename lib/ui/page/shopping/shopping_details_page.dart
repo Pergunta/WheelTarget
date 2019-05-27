@@ -8,7 +8,17 @@ import 'package:flutter_uikit/ui/page/shopping/shopping_details/shopping_widget.
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/login_background.dart';
 
-class ShoppingDetailsPage extends StatelessWidget {
+
+  class ShoppingDetailsPage extends StatefulWidget {
+  ShoppingDetailsPage();
+
+  @override
+  ShoppingDetailsPageState createState() {
+    return new ShoppingDetailsPageState();
+  }
+}
+
+class ShoppingDetailsPageState extends State<ShoppingDetailsPage> {
   final _scaffoldState = GlobalKey<ScaffoldState>();
 
   Widget bodyData(Stream<List<Product>> products) =>

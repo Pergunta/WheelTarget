@@ -19,8 +19,6 @@ class _ProfileOnePageState extends State<ProfileOnePage>
   AnimationController _controller;
   ImagePickerHandler2 imagePicker;
 
-  DateTime date2;
-
   var deviceSize;
   //Column1
   Widget profileColumn() => Container(
@@ -201,23 +199,6 @@ class _ProfileOnePageState extends State<ProfileOnePage>
                 decoration: new BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 ),
-                child: MaterialButton(
-                    color: Colors.redAccent,
-                    shape: StadiumBorder(),
-                    highlightColor: Colors.transparent,
-                    //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 42.0),
-                      child: Text(
-                        "REQUEST TRADE",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25.0,
-                            fontFamily: "WorkSansBold"),
-                      ),
-                    ),
-                    onPressed: () => imagePicker.showDialog(context)),
               ),
             ],
           ),
@@ -229,8 +210,8 @@ class _ProfileOnePageState extends State<ProfileOnePage>
       child: Column(
         children: <Widget>[
           profileColumn(),
-          CommonDivider(),
-          followColumn(deviceSize),
+          //CommonDivider(),
+          //followColumn(deviceSize),
           CommonDivider(),
           descColumn(),
           CommonDivider(),

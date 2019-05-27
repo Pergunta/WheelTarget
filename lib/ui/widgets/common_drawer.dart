@@ -87,10 +87,19 @@ class CommonDrawer extends StatelessWidget {
               "Inbox",
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
             ),
-            leading: Icon(
-              Icons.mail,
-              color: Colors.orangeAccent,
-            ),
+            leading: new Stack(children: <Widget>[
+              new Icon(
+                Icons.mail,
+                color: Colors.orangeAccent[100],
+              ),
+              new Positioned(
+                // draw a red marble
+                top: 0.0,
+                right: 0.0,
+                child: new Icon(Icons.brightness_1,
+                    size: 10.0, color: Colors.redAccent),
+              )
+            ]),
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, "/Inbox");

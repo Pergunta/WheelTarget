@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uikit/ui/page/profile/profile_one_page.dart';
+import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_drawer.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
+import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 
 class ProfileTwoPage extends StatelessWidget {
   Size deviceSize;
@@ -68,6 +70,52 @@ class ProfileTwoPage extends StatelessWidget {
                               "https://images-na.ssl-images-amazon.com/images/I/81bNkM6hDnL._SX466_.jpg"),
                         ),
                   ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+  //column3
+  Widget descColumn() => Container(
+        height: deviceSize.height * 0.14,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            child: Text(
+              "GoldenState sucks",
+              style: TextStyle(fontWeight: FontWeight.w700),
+              textAlign: TextAlign.center,
+              maxLines: 10,
+              softWrap: true,
+            ),
+          ),
+        ),
+      );
+  //column4
+  Widget accountColumn() => FittedBox(
+        fit: BoxFit.fill,
+        child: Container(
+          height: deviceSize.height * 0.3,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    ProfileTile(
+                      title: "Phone",
+                      subtitle: "+919876543210",
+                    ),
+                    SizedBox(
+                      width: 20.0,
+                    ),
+                    ProfileTile(
+                      title: "Email",
+                      subtitle: "cp3@gmail.com",
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -147,7 +195,7 @@ class ProfileTwoPage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 42.0),
                       child: Text(
-                        "SELL VEHICLE",
+                        "ADD VEHICLE",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 25.0,
@@ -167,6 +215,9 @@ class ProfileTwoPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             profileHeader(),
+            CommonDivider(),
+            descColumn(),
+            CommonDivider(),
             MaterialButton(
                 color: Colors.white,
                 shape: StadiumBorder(),
@@ -186,7 +237,10 @@ class ProfileTwoPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, "/Edit Profile");
                 }),
-            followColumn(deviceSize),
+            CommonDivider(),
+            //followColumn(deviceSize),
+            accountColumn(),
+            CommonDivider(),
             postCard(context),
           ],
         ),

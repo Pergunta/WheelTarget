@@ -194,7 +194,7 @@ void retrievalBox(BuildContext context) {
           ),
           color: Colors.redAccent,
           onPressed: () {
-            Navigator.popUntil(context, ModalRoute.withName('/View Profile'));
+            Navigator.popUntil(context, ModalRoute.withName('/Shopping Details'));
           },
         ),
       ],

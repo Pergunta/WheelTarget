@@ -206,7 +206,7 @@ class _UploadCarState extends State<UploadCar>
                           retrievalBox(context);
                         }),
                   ),
-                  SizedBox(height: 200)
+                  SizedBox(height: 300)
                 ],
               ),
             ],
@@ -238,7 +238,7 @@ void retrievalBox(BuildContext context) {
           ),
           color: Colors.redAccent,
           onPressed: () {
-            Navigator.popUntil(context, ModalRoute.withName('/View Profile'));
+            Navigator.popUntil(context, ModalRoute.withName('/Shopping Details'));
           },
         )
       ]));

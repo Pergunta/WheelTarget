@@ -206,7 +206,7 @@ class _ShoppingSellState extends State<ShoppingSell>
                           retrievalBox(context);
                         }),
                   ),
-                  SizedBox(height: 200)
+                  SizedBox(height: 300)
                 ],
               ),
             ],

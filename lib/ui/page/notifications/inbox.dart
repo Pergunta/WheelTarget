@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uikit/logic/bloc/post_bloc.dart';
 import 'package:flutter_uikit/model/post.dart';
+import 'package:flutter_uikit/ui/page/login/login_two_page.dart';
 import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_drawer.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
@@ -11,7 +12,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 class InboxPage extends StatelessWidget {
   //column1
-  Widget profileColumn(BuildContext context){ return Card(
+  Widget profileColumn(BuildContext context) {
+    return Card(
       elevation: 2.0,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -63,7 +65,64 @@ class InboxPage extends StatelessWidget {
           ),
         ],
       ),
-    );}
+    );
+  }
+
+  Widget profileColumn2(BuildContext context) {
+    return Card(
+      elevation: 2.0,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "/chat page");
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, "/View Profile");
+                  },
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/teaser_large_270/public/images/car-reviews/first-drives/legacy/dsc_7121.jpg?itok=306TzjVD"),
+                  ),
+                ),
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "Neha",
+                        style: Theme.of(context)
+                            .textTheme
+                            .body1
+                            .apply(fontWeightDelta: 700),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Text(
+                        "Online 5 min ago",
+                        style: Theme.of(context).textTheme.caption.apply(
+                            fontFamily: UIData.ralewayFont,
+                            color: Colors.grey),
+                      )
+                    ],
+                  ),
+                ))
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   //column last
   Widget actionColumn(Post post) => FittedBox(
@@ -96,44 +155,102 @@ class InboxPage extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, "/chat page");
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, "/View Profile");
-                  },
-                  child: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/View Profile");
+                },
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      "https://cdn.pixabay.com/photo/2016/04/01/09/51/actor-1299629_960_720.png"),
                 ),
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        "Trade Request from Jack",
-                        style: Theme.of(context)
-                            .textTheme
-                            .body1
-                            .apply(fontWeightDelta: 700),
+              ),
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Trade Request from Jack",
+                      style: Theme.of(context)
+                          .textTheme
+                          .body1
+                          .apply(fontWeightDelta: 700),
+                    ),
+                    SizedBox(
+                      height: 5.0,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          "His Fiat 500",
+                        ),
+                        SizedBox(width: 40),
+                        Text(
+                          "For your BMW i8",
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/Shopping Details");
+                          },
+                          child: Image.network(
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2017_Fiat_500_facelift.jpg/1920px-2017_Fiat_500_facelift.jpg",
+                            fit: BoxFit.cover,
+                            width: 80,
+                            height: 80,
+                          ),
+                        ),
+                        SizedBox(width: 40),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/Product Details");
+                          },
+                          child: Image.network(
+                            "https://images.autouncle.com/pt/car_images/medium_5b2da5b6-19aa-4d0c-ac93-6fa1c37380cc_bmw-i8-edrive-365cv.jpg",
+                            fit: BoxFit.cover,
+                            width: 80,
+                            height: 80,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+                      RaisedButton(
+                        shape: StadiumBorder(),
+                        child: Text(
+                          "Accept ",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.green,
+                        onPressed: () {
+                          acceptBox(context);
+                        },
                       ),
-                      SizedBox(
-                        height: 5.0,
-                      ),
-                    ],
-                  ),
-                ))
-              ],
-            ),
+                      SizedBox(width: 30),
+                      RaisedButton(
+                        shape: StadiumBorder(),
+                        child: Text(
+                          "Decline",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.red,
+                        onPressed: () {
+                          declineBox(context);
+                        },
+                      )
+                    ])
+                  ],
+                ),
+              ))
+            ],
           ),
         ],
       ),
@@ -210,7 +327,7 @@ class InboxPage extends StatelessWidget {
       showFAB: true,
       showDrawer: true,
       bodyData: Column(
-        children: <Widget>[profileColumn(context),postCard(context)],
+        children: <Widget>[profileColumn(context),profileColumn2(context), postCard(context)],
       ),
     );
   }
@@ -223,4 +340,46 @@ _launchURL() async {
   } else {
     throw 'Could not launch $url';
   }
+}
+
+void acceptBox(BuildContext context) {
+  var alertDialog = AlertDialog(
+      title: Text("Confirm Action"),
+      content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "Confirm Trade",
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.green,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        )
+      ]));
+
+  showDialog(context: context, builder: (BuildContext context) => alertDialog);
+}
+
+void declineBox(BuildContext context) {
+  var alertDialog = AlertDialog(
+      title: Text("Confirm Action"),
+      content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        RaisedButton(
+          padding: EdgeInsets.all(1.0),
+          shape: StadiumBorder(),
+          child: Text(
+            "Decline Trade",
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.red,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        )
+      ]));
+
+  showDialog(context: context, builder: (BuildContext context) => alertDialog);
 }

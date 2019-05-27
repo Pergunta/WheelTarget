@@ -6,8 +6,7 @@ import 'package:flutter_uikit/ui/widgets/custom_float.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ShoppingAction extends StatefulWidget {
-  final Product product;
-  ShoppingAction({this.product});
+  ShoppingAction();
 
   @override
   ShoppingActionState createState() {
