@@ -42,7 +42,13 @@ class _ProfileOnePageState extends State<ProfileOnePage>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      SizedBox(width: 50),
+                    IconButton(
+                        icon: Icon(Icons.message),
+                        color: Colors.white,
+                        iconSize: 30,
+                        onPressed: () =>{ Navigator.pushNamed(
+                                         context, "/chat page")},
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius:
